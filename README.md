@@ -23,8 +23,8 @@ subgraphs. The following documentation is provided to help with this mission:
 
 Example infrastructure:
 
-- [Terraform infrastructure template](./phase0/terraform/)
-- [Kubernetes manifests](./phase0/k8s/)
+- [Terraform infrastructure template](./terraform/)
+- [Kubernetes manifests](./k8s/)
 
 Graph Node:
 

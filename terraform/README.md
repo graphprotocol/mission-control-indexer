@@ -32,7 +32,7 @@ Make sure you execute all commands inside this directory, and authenticate
 with Google Cloud:
 
 ```shell
-cd phase0/terraform/
+cd terraform/
 gcloud auth login
 ```
 
