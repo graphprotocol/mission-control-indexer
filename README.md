@@ -67,12 +67,10 @@ phase or mission:
    Deployment: Qme2hDXrkBpuXAYEuwGPAjr6zwiMZV4FHLLBa3BHzatBWx
    Explorer:   https://thegraph.com/explorer/subgraph/synthetixio-team/synthetix
    ```
-4. Be able to serve queries for all of the above subgraphs over the shared
-   Graph Node endpoint.
-5. Be able to serve Graph Node metrics through the shared Prometheus
-   endpoint.
-6. Be able to serve 10 queries/second with less than 0.05% error rate for
-   queries.
+
+4. Serve queries for all of the above subgraphs over the shared Graph Node endpoint.
+5. Serve Graph Node metrics through the shared Prometheus endpoint.
+6. Serve 10 queries/second with less than 0.05% error rate for queries.
 
 At the end of the phase, the Graph team will verify the above criteria for
 all indexers participating in the testnet.
