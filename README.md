@@ -42,7 +42,7 @@ Configuration hints:
     - The OpenEthereum `trace` API for subgraph deployments that use call
       handlers.
 
-#### Successful Completion
+### Successful Completion
 
 The following criteria need to be met in order to successfully complete this
 phase or mission:
