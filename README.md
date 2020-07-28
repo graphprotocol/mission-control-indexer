@@ -4,7 +4,7 @@ Technical indexer documentation and infrastructure templates for the Mission Con
 
 ## Phase 0: Run an Indexer
 
-In this phase indexers are asked to set up basic indexer infrastructure. This infrastructure will then be extended upon in _Phase 1_. The infrastructure required for _Phase 0_ includes:
+In this phase indexers are asked to set up basic indexer infrastructure. This infrastructure will then be extended upon in phase 1. The infrastructure required for phase 0 includes:
 
 - Graph Node
 - Postgres database
@@ -52,8 +52,8 @@ phase or mission:
    ```
    ```
    Subgraph:   Decentraland Marketplace
-   Deployment: https://thegraph.com/explorer/subgraph/decentraland/marketplace
-   Explorer:   QmPTCpBUWvMjm8y22anuKnnAWySRDRUZwGYRxshj42NmeG
+   Deployment: QmPTCpBUWvMjm8y22anuKnnAWySRDRUZwGYRxshj42NmeG
+   Explorer:   https://thegraph.com/explorer/subgraph/decentraland/marketplace
    ```
    ```
    Subgraph:   Synthetix
