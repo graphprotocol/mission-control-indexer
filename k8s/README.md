@@ -1,10 +1,10 @@
 # Creating the Kubernetes resources for the indexer
 
-* Update the directory `overlays` to override settings from the `base`
-* configuration.
-* Read through all the files in `overlays` and adjust any values as indicated
+* Update the directory `custom` to override settings from the `base`
+ configuration.
+* Read through all the files in `custom` and adjust any values as indicated
   in the comments.
-* Deploy all resources with `kubectl apply -k overlays`
+* Deploy all resources with `kubectl apply -k custom`
 
 # Using the shell container
 

@@ -2,8 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 bases:
   - ../base
-# TODO: Adapt image names and tags to the final state that we want people
-# to use
 images:
   - name: graph-node-image
     newName: graphprotocol/graph-node
