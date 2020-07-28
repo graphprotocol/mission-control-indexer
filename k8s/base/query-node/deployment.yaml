@@ -83,6 +83,6 @@ spec:
                 fieldRef:
                   fieldPath: metadata.name
             - name: ipfs
-              value: https://api.thegraph.com/ipfs/
+              value: https://testnet.thegraph.com/ipfs/
             - name: ethereum
               value: mainnet:https://eth-mainnet.alchemyapi.io/jsonrpc/demo

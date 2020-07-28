@@ -35,7 +35,7 @@ Graph Node:
 Configuration hints:
 
 - The following IPFS node is to be used when setting up Graph Node:
-  https://api.thegraph.com/ipfs/
+  https://testnet.thegraph.com/ipfs/
 - Access to Ethereum nodes with the following capabilities is required:
     - Archive data for subgraph deployments that make `ethereum_call`
       requests against historic blocks.
@@ -44,7 +44,7 @@ Configuration hints:
 
 ### Successful Completion
 
-The following criteria need to be met in order to successfully complete this
+The following criteria must be met in order to successfully complete this
 phase or mission:
 
 1. Share a Graph Node query endpoint with The Graph.
@@ -53,14 +53,14 @@ phase or mission:
    representative for all currently existing subgraphs with regards to their
    indexing effort and features used:
    ```
-   Subgraph:   Everest
-   Deployment: QmVsp1bC9rS3rf861cXgyvsqkpdsTXKSnS4729boXZvZyH
-   Explorer:   https://thegraph.com/explorer/subgraph/graphprotocol/everest
+   Subgraph:   Foundation
+   Deployment: QmPHh7XiwqujzBGPr9ufcWVV4PT6rq421fwRaqS1v3RjVC
+   Explorer:   https://thegraph.com/explorer/subgraph/f8n/f8n-mainnet
    ```
    ```
-   Subgraph:   Decentraland Marketplace
-   Deployment: QmPTCpBUWvMjm8y22anuKnnAWySRDRUZwGYRxshj42NmeG
-   Explorer:   https://thegraph.com/explorer/subgraph/decentraland/marketplace
+   Subgraph:   Uniswap
+   Deployment: QmXKwSEMirgWVn41nRzkT3hpUBw29cp619Gx58XW6mPhZP
+   Explorer:   https://thegraph.com/explorer/subgraph/uniswap/uniswap-v2
    ```
    ```
    Subgraph:   Synthetix
@@ -71,6 +71,8 @@ phase or mission:
    Graph Node endpoint.
 5. Be able to serve Graph Node metrics through the shared Prometheus
    endpoint.
+6. Be able to serve 10 queries/second with less than 0.05% error rate for
+   queries.
 
 At the end of the phase, the Graph team will verify the above criteria for
 all indexers participating in the testnet.
