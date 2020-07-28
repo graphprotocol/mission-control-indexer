@@ -1,0 +1,28 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+  - ../base
+# TODO: Adapt image names and tags to the final state that we want people
+# to use
+images:
+  - name: graph-node-image
+    newName: graphprotocol/graph-node
+    newTag: latest
+  - name: graph-node-debug
+    newName: graphprotocol/graph-node-debug
+    newTag: latest
+  - name: prometheus-image
+    newName: prom/prometheus
+    newTag: v2.17.1
+  - name: busybox-image
+    newName: busybox
+    newTag: "1.30"
+  - name: nginx-image
+    newName: nginx
+    newTag: latest
+patchesStrategicMerge:
+  - ethereum_networks.yaml
+  - index_node.yaml
+  - query_node.yaml
+  - prometheus.yaml
+  - ingress.yaml
