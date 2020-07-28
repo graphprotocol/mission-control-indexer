@@ -23,6 +23,7 @@ Example infrastructure:
 Graph Node:
 
 - [README](https://github.com/graphprotocol/graph-node/)
+- [Docker image](https://hub.docker.com/r/graphprotocol/graph-node)
 - [Environment variables](https://github.com/graphprotocol/graph-node/tree/master/docs/environment-variables.md)
 
 Configuration hints:
