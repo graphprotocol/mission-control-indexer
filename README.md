@@ -1,2 +1,3 @@
-# mission-control-indexer
-Technical indexer documentation and infrastructure templates for the Mission Control testnet
+# Mission Control: Indexer Material
+
+Technical indexer documentation and infrastructure templates for the Mission Control testnet.
