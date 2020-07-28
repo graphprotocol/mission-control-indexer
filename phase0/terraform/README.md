@@ -1,10 +1,3 @@
-# TODO:
-
-* How do we recommend people manage the overlays for the k8s setup? We want
-  them to modify them, but we also want them to be able to easily see and
-  incorporate any changes we might make. The README currently suggests
-  copying `k8s/overlays`, which might not be the best strategy
-
 # Getting started
 
 These instructions assume that you are using Google Cloud, and walk you
