@@ -53,9 +53,9 @@ phase or mission:
    representative for all currently existing subgraphs with regards to their
    indexing effort and features used:
    ```
-   Subgraph:   Foundation
-   Deployment: QmPHh7XiwqujzBGPr9ufcWVV4PT6rq421fwRaqS1v3RjVC
-   Explorer:   https://thegraph.com/explorer/subgraph/f8n/f8n-mainnet
+   Subgraph:   Moloch
+   Deployment: QmTXzATwNfgGVukV1fX2T6xw9f6LAYRVWpsdXyRWzUR2H9
+   Explorer:   https://thegraph.com/explorer/subgraph/molochventures/moloch
    ```
    ```
    Subgraph:   Uniswap
