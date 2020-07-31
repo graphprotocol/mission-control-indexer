@@ -26,15 +26,22 @@ variable "indexer" {
   description = "A unique name for the indexer"
 }
 
+# Possible values are listed at
+# https://cloud.google.com/compute/docs/machine-types
+# For simplicity, this size is used for the three node pools (default,
+# index, query) Load on the default pool is generally very light, and a
+# smaller VM can be used there.
 variable "machine_type" {
   type = string
-  default = "n1-standard-8"
+  default = "n2d-standard-4"
   description = "The type of machine to use for kubernetes nodes"
 }
 
+# Possible values are listed at
+# https://cloud.google.com/sql/docs/postgres/create-instance
 variable "database_tier" {
   type = string
-  default = "db-custom-4-4096"
+  default = "db-n1-standard-8"
   description = "The type of machine to use for the database"
 }
 
