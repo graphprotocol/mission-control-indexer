@@ -41,7 +41,7 @@ variable "machine_type" {
 # https://cloud.google.com/sql/docs/postgres/create-instance
 variable "database_tier" {
   type = string
-  default = "db-n1-standard-8"
+  default = "db-custom-8-32768"
   description = "The type of machine to use for the database"
 }
 
