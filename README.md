@@ -35,7 +35,9 @@ Graph Node:
 Configuration hints:
 
 - Resource guidance:
+
   ![Resource Guidance](files/infrastructure-resources.png)
+
 - Access to an Ethereum mainnet archive node is required. This will enable
   you to index most of the testnet subgraphs, but not all of them. Ideal is an
   Ethereum mainnet archive node with the OpenEthereum `trace` API enabled.
