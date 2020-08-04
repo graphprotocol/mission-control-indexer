@@ -27,8 +27,9 @@ The Kubernetes cluster contains a Grafana instance that is configured to
 query the Prometheus instance in the cluster and the Postgres
 database. Note that Grafana runs in a container and stores its dashboards
 in non-persistent storage - any changes you make to the dashboards will be
-lost when the Grafana container is restarted. Upon creation, the container
-uses the default Grafana username and password, `admin` for both.
+lost when the Grafana container is restarted unless you use the Grafana UI
+to back them up outside the cluster. Upon creation, the container uses the
+default Grafana username and password, `admin` for both.
 
 By default, the Grafana container has the following dashboards:
 
