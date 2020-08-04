@@ -6,6 +6,10 @@ For support, please join the `#indexers` channel on [our
 Discord](https://thegraph.com/discord). The Graph team will be happy to
 assist you in getting set up.
 
+## Workshops
+
+* Indexer Workshop (August 4th) [[Slides](./files/indexer-workshop.pdf), [Video](https://www.youtube.com/watch?v=zRiJ_Q3EPH8)]
+
 ## Phase 0: Run an Indexer
 
 In this phase indexers are asked to set up basic indexer infrastructure. This
