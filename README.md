@@ -34,11 +34,13 @@ Graph Node:
 
 Configuration hints:
 
-- The following IPFS node is to be used when setting up Graph Node:
-  https://testnet.thegraph.com/ipfs/
+- Resource guidance:
+  ![Resource Guidance](files/infrastructure-resources.png)
 - Access to an Ethereum mainnet archive node is required. This will enable
   you to index most of the testnet subgraphs, but not all of them. Ideal is an
   Ethereum mainnet archive node with the OpenEthereum `trace` API enabled.
+- The following IPFS node is to be used when setting up Graph Node:
+  https://testnet.thegraph.com/ipfs/
 
 ### Successful Completion
 
