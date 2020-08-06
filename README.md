@@ -8,7 +8,12 @@ assist you in getting set up.
 
 ## Workshops
 
-* Indexer Workshop (August 4th) [[Slides](./files/indexer-workshop.pdf), [Video](https://www.youtube.com/watch?v=zRiJ_Q3EPH8)]
+- Indexer Workshop (August 4th) [[Slides](./files/indexer-workshop.pdf), [Video](https://www.youtube.com/watch?v=zRiJ_Q3EPH8)]
+
+## Resources
+
+- [FAQ](./faq.md)
+- [Community Wiki](https://github.com/graphprotocol/mission-control-indexer/wiki) (please edit responsibly!)
 
 ## Phase 0: Run an Indexer
 
