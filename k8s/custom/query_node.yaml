@@ -11,9 +11,17 @@ spec:
         - name: graph-node
           resources:
             requests:
-              # Set this to a little more than half the number of CPUs
-              # that one VM in the node pool has
-              cpu: 600m
+              # Set this to a little less than half the number of CPUs that
+              # one VM in the node pool has. We ultimately want each VM in
+              # the query_pool to run one query-node pod. That is
+              # surprisingly hard to express. The reason it has to be a
+              # little less than half is so that when an update is rolled
+              # out, k8s will find space on each VM to run the old and the
+              # new pod side-by-side for a brief moment.
+              #
+              # The value 1500m corresponds to 1.5 CPU's, which is right
+              # for the default 4 CPU VM's that the Terraform manifest uses
+              cpu: 1500m
           env:
             - name: GRAPH_LOG
               value: debug
