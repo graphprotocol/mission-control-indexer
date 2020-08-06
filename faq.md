@@ -38,14 +38,22 @@ shows the config file using a scrape job with kubernetes_sd_configs. If you
 run everything bare metal, you'll probably need to use a job with
 static_configs (pointing to e.g. http://localhost:8040/ if that's the port
 that your graph-node serves the metrics from). Check out
-
 https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config
-
 and
-
 https://prometheus.io/docs/prometheus/latest/configuration/configuration/#static_config
-
 in particular.
+
+## What does the `ingress.kubernetes.io/target-proxy` in the k8s setup mean?
+
+That is only useful if you want to set up your ingress so it's accessible
+through Google's global HTTPS load balancer. We found that to be the easiest
+way to expose an ingress via an auto-updated SSL certificate. Without that,
+all you get is a static IP address (which you can then still add a DNS entry
+for, but it'll be HTTP). Which may be fine, depends on how far you want to
+take it.
+
+If you are interested in the HTTPS setup, here's a quick writeup:
+https://jannis.github.io/notes/google-cloud-https.
 
 ## Phase 0
 
