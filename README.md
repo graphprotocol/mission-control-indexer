@@ -77,7 +77,7 @@ phase or mission:
    ```
 
    ```
-   Subgraph:   Synthetix (bonus points, requires an Ethereum node with the `trace` API)
+   Subgraph:   Synthetix
    Deployment: Qme2hDXrkBpuXAYEuwGPAjr6zwiMZV4FHLLBa3BHzatBWx
    Explorer:   https://thegraph.com/explorer/subgraph/synthetixio-team/synthetix
    ```
