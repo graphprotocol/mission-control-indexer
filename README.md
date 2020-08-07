@@ -81,6 +81,16 @@ phase or mission:
    Deployment: Qme2hDXrkBpuXAYEuwGPAjr6zwiMZV4FHLLBa3BHzatBWx
    Explorer:   https://thegraph.com/explorer/subgraph/synthetixio-team/synthetix
    ```
+   
+   Another subgraph that you _can_ deploy but don't have to (no bonus points),
+   is listed below. It requires only a _full_ node and can be a good way to test
+   your initial graph-node setup.
+   
+   ```
+   Subgraph:   Gravity
+   Deployment: QmbeDC4G8iPAUJ6tRBu99vwyYkaSiFwtXWKwwYkoNphV4X
+   Explorer:   https://thegraph.com/explorer/subgraph/jannis/gravity
+   ```
 
 4. Serve queries for all of the above subgraphs over the shared Graph Node endpoint.
 5. Serve Graph Node metrics through the shared Prometheus endpoint.
