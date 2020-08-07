@@ -33,7 +33,11 @@ variable "indexer" {
 # smaller VM can be used there.
 variable "machine_type" {
   type = string
-  default = "n2d-standard-4"
+  # Using 'n2d-standard-4' is really preferrable here, since they are
+  # faster machines for the same price, but many people report that
+  # they do not have quote for that in GCP, and that getting the
+  # quote raised can be very difficult with GCP support
+  default = "n1-standard-4"
   description = "The type of machine to use for kubernetes nodes"
 }
 
