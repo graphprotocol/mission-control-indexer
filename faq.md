@@ -25,7 +25,7 @@
   number of subgraphs you can index (due to the required I/O throughput). We
   recommend load balancing across a few nodes.
 
-### How do configure Prometheus to scrape Graph Node metrics?
+### How to configure Prometheus to scrape Graph Node metrics?
 
 https://prometheus.io/docs/prometheus/latest/installation/ has some
 instructions on installing Prometheus, as well as links to binaries. Once
