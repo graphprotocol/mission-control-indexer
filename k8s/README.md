@@ -81,8 +81,8 @@ you will use them to do the following:
 * `deploy <subgraph name> <subgraph id> <node>`: deploys a specific
   subgraph and associates it with a name. The subgraph will be indexed by
   the index node `node`. For example, `deploy uniswap/uniswap-v2
-  QmXKwSEMirgWVn41nRzkT3hpUBw29cp619Gx58XW6mPhZP index-node-0` will deploy
-  Uniswap V2 and start indexing it on `index_node_0`
+  QmXKwSEMirgWVn41nRzkT3hpUBw29cp619Gx58XW6mPhZP index_node_0` will deploy
+  Uniswap V2 and start indexing it on `index-node-0`
 * `reassign <subgraph name> <subgraph id> <node>` will move indexing of the
   given subgraph version to a different node `node`. It is possible to use
   a node name that does not exist in the infrastructure, say `unused`, to
