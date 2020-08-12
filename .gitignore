@@ -1,0 +1,4 @@
+terraform/.gcloud-credentials.json
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfvars
