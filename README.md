@@ -98,3 +98,7 @@ phase or mission:
 
 At the end of the phase, the Graph team will verify the above criteria for
 all indexers participating in the testnet.
+
+### Phase 0 Test Harness
+
+You can find this in [testing/phase0](./testing/phase0/).

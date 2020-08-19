@@ -1,0 +1,10 @@
+QmTXzATwNfgGVukV1fX2T6xw9f6LAYRVWpsdXyRWzUR2H9,{ votes { id } }
+QmTXzATwNfgGVukV1fX2T6xw9f6LAYRVWpsdXyRWzUR2H9,{ proposals { id } }
+QmTXzATwNfgGVukV1fX2T6xw9f6LAYRVWpsdXyRWzUR2H9,{ members { id } }
+QmTXzATwNfgGVukV1fX2T6xw9f6LAYRVWpsdXyRWzUR2H9,"{ members { id votes(where: {timestamp_gt: ""1234""}) { id proposalIndex } } }"
+QmXKwSEMirgWVn41nRzkT3hpUBw29cp619Gx58XW6mPhZP,{ uniswapFactories(first: 5) { id pairCount totalVolumeUSD } tokens(first: 5) { id symbol name decimals } }
+QmXKwSEMirgWVn41nRzkT3hpUBw29cp619Gx58XW6mPhZP,{ users(orderBy: usdSwapped) { id usdSwapped } }
+QmXKwSEMirgWVn41nRzkT3hpUBw29cp619Gx58XW6mPhZP,"{ swaps(where: { timestamp_gt: ""10000""}) { pair { token0 { name } token1 { name } } } }"
+Qme2hDXrkBpuXAYEuwGPAjr6zwiMZV4FHLLBa3BHzatBWx,"{ transfers(where: {source_in: [""sETH"", ""sUSD""], to_not: ""0x0000000000000000000000000000000000000000"", from_not: ""0x0000000000000000000000000000000000000000""}, orderBy: timestamp, orderDirection: desc) { id from to value source block } }"
+Qme2hDXrkBpuXAYEuwGPAjr6zwiMZV4FHLLBa3BHzatBWx,{ issuers { id } }
+Qme2hDXrkBpuXAYEuwGPAjr6zwiMZV4FHLLBa3BHzatBWx,{ synthetixes { id issuers snxHolders } }
