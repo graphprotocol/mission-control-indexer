@@ -98,7 +98,7 @@ const parseIndexer = (line: any): Indexer | undefined => {
 }
 
 export const parseIndexers = (file: string): Indexer[] => {
-  const result = Papa.parse(fs.readFileSync(file, 'utf-8'), {
+  const result = Papa.parse(fs.readFileSync(file, 'utf-8').trim(), {
     header: true,
   })
   if (result.errors.length > 0) {
