@@ -9,6 +9,12 @@ images:
   - name: graph-node-debug
     newName: graphprotocol/graph-node-debug
     newTag: latest
+  - name: indexer-agent-image
+    newName: registry.hub.docker.com/graphprotocol/indexer-agent
+    newTag: latest
+  - name: indexer-service-image
+    newName: registry.hub.docker.com/graphprotocol/indexer-service
+    newTag: latest
   - name: prometheus-image
     newName: prom/prometheus
     newTag: v2.17.1
@@ -22,5 +28,7 @@ patchesStrategicMerge:
   - ethereum_networks.yaml
   - index_node.yaml
   - query_node.yaml
+  - indexer_agent.yaml
+  - indexer_service.yaml
   - prometheus.yaml
   - ingress.yaml
