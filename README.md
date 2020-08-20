@@ -25,7 +25,7 @@ required for phase 0 includes:
 - Postgres database
 - Prometheus
 
-![Phase 0 Architecture](files/phase0-architecture.jpg)
+![Phase 0 Architecture](files/phase0-architecture.png)
 
 ### The Mission
 
