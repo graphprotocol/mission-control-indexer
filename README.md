@@ -25,6 +25,8 @@ required for phase 0 includes:
 - Postgres database
 - Prometheus
 
+![Phase 0 Architecture](files/phase0-architecture.jpg)
+
 ### The Mission
 
 The mission is to set up the above infrastructure and index a specific set of
@@ -81,11 +83,11 @@ phase or mission:
    Deployment: Qme2hDXrkBpuXAYEuwGPAjr6zwiMZV4FHLLBa3BHzatBWx
    Explorer:   https://thegraph.com/explorer/subgraph/synthetixio-team/synthetix
    ```
-   
+
    Another subgraph that you _can_ deploy but don't have to (no bonus points),
    is listed below. It requires only a _full_ node and can be a good way to test
    your initial graph-node setup.
-   
+
    ```
    Subgraph:   Gravity
    Deployment: QmbeDC4G8iPAUJ6tRBu99vwyYkaSiFwtXWKwwYkoNphV4X
