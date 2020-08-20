@@ -140,7 +140,6 @@ const testPrometheus = async ({
   const indexNodeMetrics = [
     'subgraph_count',
     'QmXKwSEMirgWVn41nRzkT3hpUBw29cp619Gx58XW6mPhZP_sync_total_secs',
-    'Qme2hDXrkBpuXAYEuwGPAjr6zwiMZV4FHLLBa3BHzatBWx_sync_total_secs',
     'QmTXzATwNfgGVukV1fX2T6xw9f6LAYRVWpsdXyRWzUR2H9_sync_total_secs',
   ]
 
