@@ -105,11 +105,11 @@ all indexers participating in the testnet.
 
 You can find this in [testing/phase0](./testing/phase0/).
 
-## Phase 1
+## Phase 1: Basic Protocol Actions
 
-### Setup
+### Mission 1: Setting up Indexer Components
 
-To prepare for the main mission of phase 1 indexers will need to extend their infrastructure to include components
+To prepare for the later mission of phase 1, indexers will need to extend their infrastructure to include components
 that will facilitate their interactions with the network and help manage subgraph deployments. Two components will be 
 added to the indexer infrastructer, `indexer-agent` and `indexer-service`. Please refer to the following documentation
 for help setting up for phase 1. 
@@ -121,7 +121,6 @@ infrastructure to gather data on subgraph deployments which it then uses to mana
 on its infrastructure. The subgraph deployment indexing decisions are governed by indexer rules which may be managed 
 using the indexer-cli (see below.)
 - [Docker image](https://registry.hub.docker.com/graphprotocol/indexer-agent)
-
 
 Indexer Service:
 - The Indexer Service is the indexer's gateway to the outside world. It exposes the public query endpoint,
@@ -206,6 +205,7 @@ for installing via NPM, Docker, or directly from source below.
     graph-indexer-agent start ...
     graph-indexer-service ...
     ```
-  
-### Core Mission
-Stay tuned! 
+
+### Mission 2: Performing Basic Protocol Functions
+
+Stay tuned for details!
