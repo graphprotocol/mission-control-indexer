@@ -43,6 +43,7 @@ const runQueries = async ({
     const instance = autocannon(
       {
         url: indexers.map((indexer) => indexer.graphNode.toString()),
+        servername: indexers.length > 1 ? undefined : indexers[0].graphNode.host,
         duration,
         connections: connectionsPerIndexer * indexers.length,
         connectionRate: ratePerIndexer
