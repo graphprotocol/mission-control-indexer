@@ -104,3 +104,108 @@ all indexers participating in the testnet.
 ### Phase 0 Test Harness
 
 You can find this in [testing/phase0](./testing/phase0/).
+
+## Phase 1
+
+### Setup
+
+To prepare for the main mission of phase 1 indexers will need to extend their infrastructure to include components
+that will facilitate their interactions with the network and help manage subgraph deployments. Two components will be 
+added to the indexer infrastructer, `indexer-agent` and `indexer-service`. Please refer to the following documentation
+for help setting up for phase 1. 
+
+Indexer Agent:
+
+- The Indexer Agent automatically makes deployment and allocation decisions. It regularly polls the network and the indexer 
+infrastructure to gather data on subgraph deployments which it then uses to manage the subgraph deployments that are indexing
+on its infrastructure. The subgraph deployment indexing decisions are governed by indexer rules which may be managed 
+using the indexer-cli (see below.)
+- [Docker image](https://registry.hub.docker.com/graphprotocol/indexer-agent)
+
+
+Indexer Service:
+- The Indexer Service is the indexer's gateway to the outside world. It exposes the public query endpoint,
+proxies part of the indexing statuses API, and manages state channels for query payment along with any helping 
+facilitate any disputes that arise. 
+that may come up
+- [Docker image](https://registry.hub.docker.com/graphprotocol/indexer-service)
+
+Indexer CLI: 
+
+- [README](https://github.com/graphprotocol/clis/)
+- [Detailed descriptions and usage instructions](./k8s/README#Managing-subgraphs-using-the-Indexer-Agent)
+
+Example infrastructure:
+
+- [Kubernetes manifests](./k8s/) - The k8s manifests in the example infrastructure have been updated to include 
+`indexer-agent` and `indexer-service` deployments.  The `indexer-service` deployment also includes a backend config and 
+a service for exposing it to the network
+
+Installation:
+
+The `indexer-agent` and `indexer-service` each require a multitude of configuraion parameters 
+to connect to the indexer systems and communicate with the network.  These may be applied as 
+startup parameters (detailed below) or as environment variables prefaced with the component name and
+formatted in all caps, so the indexer-service `ethereum` argument for example would be `INDEXER_SERVICE_ETHEREUM`.
+The components may be installed differently depending on your preference and existing infrastructure, see instructions
+for installing via NPM, Docker, or directly from source below. 
+
+- Using NPM:
+    ```
+    npm install -g @graphprotocol/indexer-agent @graphprotocol/indexer-service
+    
+    graph-indexer-agent start \
+        --network kovan \
+        --graph-node-query-endpoint http://localhost:8000/ \
+        --graph-node-admin-endpoint http://localhost:8020/ \        
+        --graph-node-status-endpoint http://localhost:8030/graphql \
+        --public-indexer-url http://localhost:7600/ \
+        --indexer-management-port 9700
+        --indexer-geo-coordinates <indexer-lat-long-coordinates> \
+        --mnemonic <ethereum-wallet-mnemonic>
+    
+    graph-indexer-service start \
+        --port 7600        
+        --graph-node-query-endpoint http://query-node.default.svc.cluster.local/        
+        --network-subgraph-deployment QmXdbqsRbpy5Uj9YHvqrifP5LCrLnv4SUpEtTwFii66Bn2
+        --ethereum https://kovan.alchemyapi.io/jsonrpc/demo/
+        --connext-messaging nats://35.223.123.63:4222
+        --connext-node http://35.225.238.237/
+        --postgress-host <postgres-url>
+        --postgres-port 5432
+        --postgres-username <postgres-username>
+        --postgres-password <postgres-password>            
+        --mnemonic <ethereum-wallet-mnemonic>
+    ```
+    
+- Using Docker: 
+    ```
+    # Run indexer agent 
+    # Note: This assumes a `graph-node` is accessible on localhost with the admin endpoint on port 8020 and status endpoint on port 8030. 
+    docker run \
+      -p 8000:8000 \
+      -p 8020:8020 \
+      -p 8030:8030 \
+      -p 9700:9700 \
+      -it indexer-agent:latest  
+    
+    # Run indexer service
+    docker run \
+       -p 7600:7600 \
+       -it indexer-service:latest   
+    ```
+    
+- Installing from source:
+    ```
+    git clone https://github.com/graphprotocol/indexer
+    cd indexer
+    yarn
+    npm install -g
+
+    # Run indexer components
+    graph-indexer-agent start ...
+    graph-indexer-service ...
+    ```
+  
+### Core Mission
+Stay tuned! 
