@@ -123,10 +123,9 @@ using the indexer-cli (see below.)
 - [Docker image](https://registry.hub.docker.com/graphprotocol/indexer-agent)
 
 Indexer Service:
-- The Indexer Service is the indexer's gateway to the outside world. It exposes the public query endpoint,
-proxies part of the indexing statuses API, and manages state channels for query payment along with any helping 
-facilitate any disputes that arise. 
-that may come up
+- The Indexer Service is the indexer's public API. It exposes the public query endpoint,
+proxies part of the indexing statuses API, manages state channels for query payments, and helps to facilitate any disputes that arise. 
+
 - [Docker image](https://registry.hub.docker.com/graphprotocol/indexer-service)
 
 Indexer CLI: 
@@ -138,11 +137,11 @@ Example infrastructure:
 
 - [Kubernetes manifests](./k8s/) - The k8s manifests in the example infrastructure have been updated to include 
 `indexer-agent` and `indexer-service` deployments.  The `indexer-service` deployment also includes a backend config and 
-a service for exposing it to the network
+a service for exposing it to the network.
 
 Installation:
 
-The `indexer-agent` and `indexer-service` each require a multitude of configuraion parameters 
+The `indexer-agent` and `indexer-service` each require configuration parameters 
 to connect to the indexer systems and communicate with the network.  These may be applied as 
 startup parameters (detailed below) or as environment variables prefaced with the component name and
 formatted in all caps, so the indexer-service `ethereum` argument for example would be `INDEXER_SERVICE_ETHEREUM`.
@@ -154,26 +153,25 @@ for installing via NPM, Docker, or directly from source below.
     npm install -g @graphprotocol/indexer-agent @graphprotocol/indexer-service
     
     graph-indexer-agent start \
-        --network kovan \
+        --network rinkeby \
         --graph-node-query-endpoint http://localhost:8000/ \
         --graph-node-admin-endpoint http://localhost:8020/ \        
         --graph-node-status-endpoint http://localhost:8030/graphql \
         --public-indexer-url http://localhost:7600/ \
-        --indexer-management-port 9700
+        --indexer-management-port 9700 \
         --indexer-geo-coordinates <indexer-lat-long-coordinates> \
-        --mnemonic <ethereum-wallet-mnemonic>
+        --postgress-host <postgres-url> \
+        --postgres-port 5432 \
+        --postgres-username <postgres-username> \
+        --postgres-password <postgres-password> \ 
+        --network-subgraph-deployment QmXdbqsRbpy5Uj9YHvqrifP5LCrLnv4SUpEtTwFii66Bn2 \
+        --mnemonic <ethereum-wallet-mnemonic> \
     
     graph-indexer-service start \
-        --port 7600        
-        --graph-node-query-endpoint http://query-node.default.svc.cluster.local/        
-        --network-subgraph-deployment QmXdbqsRbpy5Uj9YHvqrifP5LCrLnv4SUpEtTwFii66Bn2
-        --ethereum https://kovan.alchemyapi.io/jsonrpc/demo/
-        --connext-messaging nats://35.223.123.63:4222
-        --connext-node http://35.225.238.237/
-        --postgress-host <postgres-url>
-        --postgres-port 5432
-        --postgres-username <postgres-username>
-        --postgres-password <postgres-password>            
+        --port 7600 \
+        --graph-node-query-endpoint http://query-node.default.svc.cluster.local/ \
+        --network-subgraph-deployment QmXdbqsRbpy5Uj9YHvqrifP5LCrLnv4SUpEtTwFii66Bn2 \
+        --ethereum https://kovan.alchemyapi.io/jsonrpc/demo/ \
         --mnemonic <ethereum-wallet-mnemonic>
     ```
     
