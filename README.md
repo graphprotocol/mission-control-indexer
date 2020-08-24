@@ -165,7 +165,7 @@ for installing via NPM, Docker, or directly from source below.
         --postgres-username <postgres-username> \
         --postgres-password <postgres-password> \ 
         --network-subgraph-deployment QmXdbqsRbpy5Uj9YHvqrifP5LCrLnv4SUpEtTwFii66Bn2 \
-        --mnemonic <ethereum-wallet-mnemonic> \
+        --mnemonic <ethereum-wallet-mnemonic>
     
     graph-indexer-service start \
         --port 7600 \
