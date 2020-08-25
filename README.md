@@ -145,7 +145,7 @@ Installation:
 The `indexer-agent` and `indexer-service` each require configuration parameters 
 to connect to the indexer systems and communicate with the network.  These may be applied as 
 startup parameters (detailed below) or as environment variables prefaced with the component name and
-formatted in all caps, so the indexer-service `--ethereum` argument for example would be `INDEXER_SERVICE_ETHEREUM`.
+formatted in all caps, so the indexer-service `--ethereum` argument for example would be `INDEXER_SERVICE_ETHEREUM`. (Note: Some environment variables from the `indexer-agent` are not prefixed with `INDEXER_AGENT`. These are `SERVER_HOST`, `SERVER_PORT`, `SERVER_DB_NAME`, `SERVER_DB_USER`, and `SERVER_DB_PASSWORD`.)
 The components may be installed differently depending on your preference and existing infrastructure, see instructions
 for installing via NPM, Docker, or directly from source below. 
 
