@@ -144,7 +144,7 @@ Installation:
 The `indexer-agent` and `indexer-service` each require configuration parameters 
 to connect to the indexer systems and communicate with the network.  These may be applied as 
 startup parameters (detailed below) or as environment variables prefaced with the component name and
-formatted in all caps, so the indexer-service `ethereum` argument for example would be `INDEXER_SERVICE_ETHEREUM`.
+formatted in all caps, so the indexer-service `--ethereum` argument for example would be `INDEXER_SERVICE_ETHEREUM`.
 The components may be installed differently depending on your preference and existing infrastructure, see instructions
 for installing via NPM, Docker, or directly from source below. 
 
@@ -153,25 +153,25 @@ for installing via NPM, Docker, or directly from source below.
     npm install -g @graphprotocol/indexer-agent @graphprotocol/indexer-service
     
     graph-indexer-agent start \
-        --network rinkeby \
         --graph-node-query-endpoint http://localhost:8000/ \
         --graph-node-admin-endpoint http://localhost:8020/ \        
         --graph-node-status-endpoint http://localhost:8030/graphql \
-        --public-indexer-url http://localhost:7600/ \
-        --indexer-management-port 9700 \
+        --public-indexer-url http://your.indexer.domain/ \
+        --indexer-management-port 18000 \
         --indexer-geo-coordinates <indexer-lat-long-coordinates> \
-        --postgress-host <postgres-url> \
+        --postgress-host <postgres-host> \
         --postgres-port 5432 \
         --postgres-username <postgres-username> \
         --postgres-password <postgres-password> \ 
-        --network-subgraph-deployment QmXdbqsRbpy5Uj9YHvqrifP5LCrLnv4SUpEtTwFii66Bn2 \
+        --network-subgraph-deployment QmdnbCVq2EKj24qCa5ibYRGAJWHdhkitTzfv8sySt6xKEa \
+        --ethereum https://eth-rinkeby.alchemyapi.io/jsonrpc/demo/ \
         --mnemonic <ethereum-wallet-mnemonic>
     
     graph-indexer-service start \
-        --port 7600 \
-        --graph-node-query-endpoint http://query-node.default.svc.cluster.local/ \
-        --network-subgraph-deployment QmXdbqsRbpy5Uj9YHvqrifP5LCrLnv4SUpEtTwFii66Bn2 \
-        --ethereum https://kovan.alchemyapi.io/jsonrpc/demo/ \
+        --port 80 \
+        --graph-node-query-endpoint http://localhost:8000/ \
+        --network-subgraph-deployment QmdnbCVq2EKj24qCa5ibYRGAJWHdhkitTzfv8sySt6xKEa \
+        --ethereum https://eth-rinkeby.alchemyapi.io/jsonrpc/demo/ \
         --mnemonic <ethereum-wallet-mnemonic>
     ```
     
