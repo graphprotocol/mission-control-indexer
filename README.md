@@ -111,15 +111,16 @@ You can find this in [testing/phase0](./testing/phase0/).
 
 To prepare for the later mission of phase 1, indexers will need to extend their infrastructure to include components
 that will facilitate their interactions with the network and help manage subgraph deployments. Two components will be 
-added to the indexer infrastructer, `indexer-agent` and `indexer-service`. Please refer to the following documentation
+added to the indexer infrastructure, `indexer-agent` and `indexer-service`. Please refer to the following documentation
 for help setting up for phase 1. 
 
 Indexer Agent:
 
-- The Indexer Agent automatically makes deployment and allocation decisions. It regularly polls the network and the indexer 
-infrastructure to gather data on subgraph deployments which it then uses to manage the subgraph deployments that are indexing
-on its infrastructure. The subgraph deployment indexing decisions are governed by indexer rules which may be managed 
-using the indexer-cli (see below.)
+- The Indexer Agent automatically chooses which subgraphs to index and manages deploying subgraphs to the Indexer's 
+Graph Node, allocating stake, claiming rewards, and setting real-time query prices on indexed subgraphs. Using flexible 
+rules and the Indexer CLI (see below), the Indexer can configure automatic behavior and also manually make subgraph 
+indexing decisions. The Indexer Agent monitors The Graph network as well as the Indexer's own infrastructure to implement 
+the strategy that has been defined by the Indexer.
 - [Docker image](https://registry.hub.docker.com/graphprotocol/indexer-agent)
 
 Indexer Service:

@@ -113,7 +113,7 @@ GraphQL queries and mutations.
 
 ## Installing `indexer-cli`
 
-1. Login to the [registry](`https://testnet.thegraph.com/npm-registry/`) using a web browser.
+1. Login to the [testnet NPM registry](`https://testnet.thegraph.com/npm-registry/`) using a web browser.
 2. Setup npm to access the registry.
     ```
     npm set registry https://testnet.thegraph.com/npm-registry
@@ -140,7 +140,7 @@ GraphQL queries and mutations.
 The `cli` [repository](https://github.com/graphprotocol/clis) contains usage info and examples, but to 
 help get started and provide some context the command will also briefly be describe here. 
 
-* `graph indexer connect <url>`: connect to the indexer management API.
+* `graph indexer connect <url>`: Connect to the indexer management API.
 * `graph indexer rules get [options] <deployment-id> [<key1> ...]`: Get one or more indexing rules using 
   <deployment-id> = all to get every rule. An additional argument `--merged` can be used to specify that deployment
   specific rules are merged with the global rule. 
