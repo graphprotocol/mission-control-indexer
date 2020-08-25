@@ -159,7 +159,7 @@ for installing via NPM, Docker, or directly from source below.
         --graph-node-status-endpoint http://localhost:8030/graphql \
         --public-indexer-url http://your.indexer.domain/ \
         --indexer-management-port 18000 \
-        --indexer-geo-coordinates <indexer-lat-long-coordinates> \
+        --indexer-geo-coordinates <indexer-lat-long-coordinates. Eg: 37.630768 -119.032631> \
         --postgress-host <postgres-host> \
         --postgres-port 5432 \
         --postgres-username <postgres-username> \
