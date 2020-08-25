@@ -198,6 +198,11 @@ for installing via NPM, Docker, or directly from source below.
     git clone https://github.com/graphprotocol/indexer
     cd indexer
     yarn
+
+    cd packages/indexer-service
+    npm install -g
+
+    cd ../indexer-agent
     npm install -g
 
     # Run indexer components
