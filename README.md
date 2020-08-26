@@ -50,7 +50,7 @@ by the Indexer.
 
 - [Source code](https://github.com/graphprotocol/indexer/)
 - [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent)
-- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent)
+- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent) (tag: `sha-c87bf0f`)
 
 ### Indexer Service
 
@@ -61,7 +61,7 @@ help to facilitate disputes that arise.
 
 - [Source code](https://github.com/graphprotocol/indexer/)
 - [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service)
-- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service)
+- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service) (tag: `sha-c87bf0f`)
 
 ### Indexer CLI
 
@@ -172,13 +172,13 @@ NPM, Docker, or directly from source below.
     -p 8020:8020 \
     -p 8030:8030 \
     -p 18000:18000 \
-    -it indexer-agent:latest \
+    -it graphprotocol/indexer-agent:sha-c87bf0f \
     ...env vars...
 
   # Run indexer service
   docker run \
      -p 7600:7600 \
-     -it indexer-service:latest \
+     -it graphprotocol/indexer-service:sha-c87bf0f \
     ...env vars...
   ```
 - Installing from source:
