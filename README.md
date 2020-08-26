@@ -79,6 +79,27 @@ Indexer Agent.
   `indexer-service` deployments. The `indexer-service` is also included
   in the ingress for exposing it to the network.
 
+### NPM Registry Access
+
+Since at least the indexer CLI requires access to the NPM registry, make sure
+you've got that set up properly:
+
+```sh
+npm set registry https://testnet.thegraph.com/npm-registry
+npm login
+```
+
+If you build your own Docker images, you will have to obtain the NPM auth
+token from `~/.npmrc` and store it in an environment variable:
+
+```sh
+$ cat ~/.npmrc | grep authToken
+//testnet.thegraph.com/:_authToken=<NPM_TOKEN>
+```
+
+Use the `<NPM_TOKEN>` part as the `NPM_TOKEN=...` that you pass to Docker in
+the later steps.
+
 ### Installation
 
 The `indexer-agent` and `indexer-service` each require configuration
