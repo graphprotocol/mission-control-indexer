@@ -48,7 +48,7 @@ decisions. The Indexer Agent monitors The Graph Network as well as the
 Indexer's own infrastructure to implement the strategy that has been defined
 by the Indexer.
 
-- [Soure code](https://github.com/graphprotocol/indexer/)
+- [Source code](https://github.com/graphprotocol/indexer/)
 - [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent)
 - [Docker image](https://registry.hub.docker.com/graphprotocol/indexer-agent)
 
@@ -59,7 +59,7 @@ public query endpoint, proxies part of the Graph Node's indexing status API,
 manages state channels for receiving query payments, and will, in the future,
 help to facilitate disputes that arise.
 
-- [Soure code](https://github.com/graphprotocol/indexer/)
+- [Source code](https://github.com/graphprotocol/indexer/)
 - [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service)
 - [Docker image](https://registry.hub.docker.com/graphprotocol/indexer-service)
 
