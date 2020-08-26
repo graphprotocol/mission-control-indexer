@@ -15,201 +15,187 @@ assist you in getting set up.
 - [FAQ](./faq.md)
 - [Community Wiki](https://github.com/graphprotocol/mission-control-indexer/wiki) (please edit responsibly!)
 
-## Phase 0: Run an Indexer
+# Past Phases
 
-In this phase indexers are asked to set up basic indexer infrastructure. This
-infrastructure will then be extended upon in phase 1. The infrastructure
-required for phase 0 includes:
+- [Phase 0](phases/phase0.md)
 
-- Graph Node
-- Postgres database
-- Prometheus
+# Phase 1: Basic Protocol Actions
 
-![Phase 0 Architecture](files/phase0-architecture.png)
+Phase 1 is divided into two missions:
 
-### The Mission
+1. Set up indexer components
+2. Perform basic protocol actions
 
-The mission is to set up the above infrastructure and index a specific set of
-subgraphs. The following documentation is provided to help with this mission:
+## Mission 1: Set up Indexer Components
 
-Example infrastructure:
+To prepare for the second mission of phase 1, indexers will need to extend
+their infrastructure to include components that will facilitate their
+interactions with the network and help manage subgraph deployments. Two
+components will be added to the indexer infrastructure: `indexer-agent` and
+`indexer-service`. Please refer to the following documentation for help
+setting up for phase 1.
 
-- [Terraform infrastructure template](./terraform/)
-- [Kubernetes manifests](./k8s/)
+![Phase 1 Architecture](files/phase1-architecture.png)
 
-Graph Node:
+### Indexer Agent
 
-- [README](https://github.com/graphprotocol/graph-node/)
-- [Docker image](https://hub.docker.com/r/graphprotocol/graph-node)
-- [Environment variables](https://github.com/graphprotocol/graph-node/tree/master/docs/environment-variables.md)
+The Indexer Agent automatically chooses which subgraphs to index and manages
+deploying subgraphs to the indexer's Graph Node(s), allocating stake,
+claiming rewards, and setting real-time query prices on indexed subgraphs.
+Using flexible rules and the Indexer CLI (see below), one can
+configure automatic behavior and also make manual subgraph indexing
+decisions. The Indexer Agent monitors The Graph Network as well as the
+Indexer's own infrastructure to implement the strategy that has been defined
+by the Indexer.
 
-Configuration hints:
+- [Soure code](https://github.com/graphprotocol/indexer/)
+- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent)
+- [Docker image](https://registry.hub.docker.com/graphprotocol/indexer-agent)
 
-- Resource guidance:
+### Indexer Service
 
-  ![Resource Guidance](files/infrastructure-resources.png)
+The Indexer Service is the indexer's public API in the network. It exposes a
+public query endpoint, proxies part of the Graph Node's indexing status API,
+manages state channels for receiving query payments, and will, in the future,
+help to facilitate disputes that arise.
 
-- Access to an Ethereum mainnet archive node is required. This will enable
-  you to index most of the testnet subgraphs, but not all of them. Ideal is an
-  Ethereum mainnet archive node with the OpenEthereum `trace` API enabled.
-- The following IPFS node is to be used when setting up Graph Node:
-  https://testnet.thegraph.com/ipfs/
+- [Soure code](https://github.com/graphprotocol/indexer/)
+- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service)
+- [Docker image](https://registry.hub.docker.com/graphprotocol/indexer-service)
+
+### Indexer CLI
+
+This connects to port 8000 of the Indexer Agent, which serves the so-called
+indexer management API. The CLI can be used to control the behavior of the
+Indexer Agent.
+
+- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-cli)
+- [Instructions](./guides/indexer-management.md)
+
+### Example infrastructure
+
+- [Kubernetes manifests](./k8s/) — The k8s manifests in the example
+  setup have been updated to include `indexer-agent` and
+  `indexer-service` deployments. The `indexer-service` is also included
+  in the ingress for exposing it to the network.
+
+### Installation
+
+The `indexer-agent` and `indexer-service` each require configuration
+parameters to connect to Ethereum, other parts of the indexer's
+infrastructure (Graph Node(s), Postgres) and to communicate with the network.
+
+These may be applied as CLI arguments (detailed below) or as environment
+variables prefaced with the component name and formatted in all caps. The
+indexer-service `--ethereum` argument for example becomes
+`INDEXER_SERVICE_ETHEREUM`.
+
+Note: Some environment variables for the `indexer-service` are not prefixed
+with `INDEXER_SERVICE`. These are:
+
+- `SERVER_HOST`,
+- `SERVER_PORT`,
+- `SERVER_DB_NAME`,
+- `SERVER_DB_USER`, and
+- `SERVER_DB_PASSWORD`.
+
+The Indexer Agent and Service may be installed differently depending on your
+preference and existing infrastructure. See instructions for installing via
+NPM, Docker, or directly from source below.
+
+- Using NPM:
+
+  ```
+  npm install -g \
+    --registry https://testnet.thegraph.com/npm-registry/ \
+    @graphprotocol/indexer-agent \
+    @graphprotocol/indexer-service
+
+  graph-indexer-agent start \
+      --graph-node-query-endpoint http://localhost:8000/ \
+      --graph-node-admin-endpoint http://localhost:8020/ \
+      --graph-node-status-endpoint http://localhost:8030/graphql \
+      --public-indexer-url http://your.indexer.domain/ \
+      --indexer-management-port 18000 \
+      --indexer-geo-coordinates <indexer-lat-long-coordinates. Eg: 37.630768 -119.032631> \
+      --postgres-host <postgres-host> \
+      --postgres-port 5432 \
+      --postgres-username <postgres-username> \
+      --postgres-password <postgres-password> \
+      --network-subgraph-endpoint https://api.thegraph.com/subgraphs/name/graphprotocol/graph-network-rinkeby \
+      --ethereum https://eth-rinkeby.alchemyapi.io/jsonrpc/demo/ \
+      --mnemonic <Ethereum mnemonic>
+
+  export SERVER_HOST=<postgres-host>
+  export SERVER_PORT=<postgres-port>
+  export SERVER_DB_NAME=<postgres-db> # Don't use the same as your Graph Node(s)!
+  export SERVER_DB_USERNAME=<postgres-username>
+  export SERVER_DB_PASSWORD=<postgres-password>
+
+  graph-indexer-service start \
+      --port 80 \
+      --graph-node-query-endpoint http://localhost:8000/ \
+      --network-subgraph-endpoint https://api.thegraph.com/subgraphs/name/graphprotocol/graph-network-rinkeby \
+      --ethereum https://eth-rinkeby.alchemyapi.io/jsonrpc/demo/ \
+      --mnemonic <Ethereum mnemonic> # This must be the same as the Indexer Agent!
+  ```
+
+- Using Docker:
+  ```
+  # Run indexer agent
+  # Note: This assumes a `graph-node` is accessible on localhost with the admin endpoint on port 8020 and status endpoint on port 8030.
+  docker run \
+    -p 8000:8000 \
+    -p 8020:8020 \
+    -p 8030:8030 \
+    -p 18000:18000 \
+    -it indexer-agent:latest \
+    ...env vars...
+
+  # Run indexer service
+  docker run \
+     -p 7600:7600 \
+     -it indexer-service:latest \
+    ...env vars...
+  ```
+- Installing from source:
+
+  ```
+  git clone https://github.com/graphprotocol/indexer
+  cd indexer
+  yarn
+
+  cd packages/indexer-service
+  npm install -g
+
+  cd ../indexer-agent
+  npm install -g
+
+  # Run indexer components
+  graph-indexer-agent start ...
+  graph-indexer-service start ...
+  ```
 
 ### Successful Completion
 
-The following criteria must be met in order to successfully complete this
-phase or mission:
+1. In order to complete mission 1 of phase 1, you are asked to install the
+   Indexer CLI, connect it to your Indexer agent, and run its `graph indexer status` command:
 
-1. Share a Graph Node query endpoint with The Graph.
-2. Share a Prometheus endpoint with The Graph.
-3. Deploy the following subgraphs to the Graph Node. These subgraphs are
-   representative for all currently existing subgraphs with regards to their
-   indexing effort and features used:
+```sh
+npm install -g \
+  --registry https://testnet.thegraph.com/npm-registry/ \
+  @graphprotocol/graph-cli@0.19.0-alpha.0 \
+  @graphprotocol/indexer-cli
 
-   ```
-   Subgraph:   Moloch
-   Deployment: QmTXzATwNfgGVukV1fX2T6xw9f6LAYRVWpsdXyRWzUR2H9
-   Explorer:   https://thegraph.com/explorer/subgraph/molochventures/moloch
-   ```
+graph indexer connect http://<indexer-agent-host>:<indexer-management-port>/
+graph indexer status
+```
 
-   ```
-   Subgraph:   Uniswap
-   Deployment: QmXKwSEMirgWVn41nRzkT3hpUBw29cp619Gx58XW6mPhZP
-   Explorer:   https://thegraph.com/explorer/subgraph/uniswap/uniswap-v2
-   ```
+2. Send us the output of this command via the mission 1 form.
+3. Configure your Prometheus so it scrapes metrics from the Indexer Service and Agent.
+4. If the Prometheus endpoint has changed since phase 0, submit the
+   Prometheus endpoint through the form as well.
 
-   ```
-   Subgraph:   Synthetix
-   Deployment: Qme2hDXrkBpuXAYEuwGPAjr6zwiMZV4FHLLBa3BHzatBWx
-   Explorer:   https://thegraph.com/explorer/subgraph/synthetixio-team/synthetix
-   ```
-
-   Another subgraph that you _can_ deploy but don't have to (no bonus points),
-   is listed below. It requires only a _full_ node and can be a good way to test
-   your initial graph-node setup.
-
-   ```
-   Subgraph:   Gravity
-   Deployment: QmbeDC4G8iPAUJ6tRBu99vwyYkaSiFwtXWKwwYkoNphV4X
-   Explorer:   https://thegraph.com/explorer/subgraph/jannis/gravity
-   ```
-
-4. Serve queries for all of the above subgraphs over the shared Graph Node endpoint.
-5. Serve Graph Node metrics through the shared Prometheus endpoint.
-6. Serve 10 queries/second with less than 0.05% error rate for queries.
-
-At the end of the phase, the Graph team will verify the above criteria for
-all indexers participating in the testnet.
-
-### Phase 0 Test Harness
-
-You can find this in [testing/phase0](./testing/phase0/).
-
-## Phase 1: Basic Protocol Actions
-
-### Mission 1: Setting up Indexer Components
-
-To prepare for the later mission of phase 1, indexers will need to extend their infrastructure to include components
-that will facilitate their interactions with the network and help manage subgraph deployments. Two components will be 
-added to the indexer infrastructure, `indexer-agent` and `indexer-service`. Please refer to the following documentation
-for help setting up for phase 1. 
-
-Indexer Agent:
-
-- The Indexer Agent automatically chooses which subgraphs to index and manages deploying subgraphs to the Indexer's 
-Graph Node, allocating stake, claiming rewards, and setting real-time query prices on indexed subgraphs. Using flexible 
-rules and the Indexer CLI (see below), the Indexer can configure automatic behavior and also manually make subgraph 
-indexing decisions. The Indexer Agent monitors The Graph network as well as the Indexer's own infrastructure to implement 
-the strategy that has been defined by the Indexer.
-- [Docker image](https://registry.hub.docker.com/graphprotocol/indexer-agent)
-
-Indexer Service:
-- The Indexer Service is the indexer's public API. It exposes the public query endpoint,
-proxies part of the indexing statuses API, manages state channels for query payments, and helps to facilitate any disputes that arise. 
-
-- [Docker image](https://registry.hub.docker.com/graphprotocol/indexer-service)
-
-Indexer CLI: 
-
-- [README](https://github.com/graphprotocol/clis/)
-- [Detailed descriptions and usage instructions](./k8s/README#Managing-subgraphs-using-the-Indexer-Agent)
-
-Example infrastructure:
-
-- [Kubernetes manifests](./k8s/) - The k8s manifests in the example infrastructure have been updated to include 
-`indexer-agent` and `indexer-service` deployments.  The `indexer-service` deployment also includes a backend config and 
-a service for exposing it to the network.
-
-Installation:
-
-The `indexer-agent` and `indexer-service` each require configuration parameters 
-to connect to the indexer systems and communicate with the network.  These may be applied as 
-startup parameters (detailed below) or as environment variables prefaced with the component name and
-formatted in all caps, so the indexer-service `--ethereum` argument for example would be `INDEXER_SERVICE_ETHEREUM`. (Note: Some environment variables from the `indexer-agent` are not prefixed with `INDEXER_AGENT`. These are `SERVER_HOST`, `SERVER_PORT`, `SERVER_DB_NAME`, `SERVER_DB_USER`, and `SERVER_DB_PASSWORD`.)
-The components may be installed differently depending on your preference and existing infrastructure, see instructions
-for installing via NPM, Docker, or directly from source below. 
-
-- Using NPM:
-    ```
-    npm install -g @graphprotocol/indexer-agent @graphprotocol/indexer-service
-    
-    graph-indexer-agent start \
-        --graph-node-query-endpoint http://localhost:8000/ \
-        --graph-node-admin-endpoint http://localhost:8020/ \        
-        --graph-node-status-endpoint http://localhost:8030/graphql \
-        --public-indexer-url http://your.indexer.domain/ \
-        --indexer-management-port 18000 \
-        --indexer-geo-coordinates <indexer-lat-long-coordinates. Eg: 37.630768 -119.032631> \
-        --postgress-host <postgres-host> \
-        --postgres-port 5432 \
-        --postgres-username <postgres-username> \
-        --postgres-password <postgres-password> \ 
-        --network-subgraph-deployment QmdnbCVq2EKj24qCa5ibYRGAJWHdhkitTzfv8sySt6xKEa \
-        --ethereum https://eth-rinkeby.alchemyapi.io/jsonrpc/demo/ \
-        --mnemonic <ethereum-wallet-mnemonic>
-    
-    graph-indexer-service start \
-        --port 80 \
-        --graph-node-query-endpoint http://localhost:8000/ \
-        --network-subgraph-deployment QmdnbCVq2EKj24qCa5ibYRGAJWHdhkitTzfv8sySt6xKEa \
-        --ethereum https://eth-rinkeby.alchemyapi.io/jsonrpc/demo/ \
-        --mnemonic <ethereum-wallet-mnemonic>
-    ```
-    
-- Using Docker: 
-    ```
-    # Run indexer agent 
-    # Note: This assumes a `graph-node` is accessible on localhost with the admin endpoint on port 8020 and status endpoint on port 8030. 
-    docker run \
-      -p 8000:8000 \
-      -p 8020:8020 \
-      -p 8030:8030 \
-      -p 9700:9700 \
-      -it indexer-agent:latest  
-    
-    # Run indexer service
-    docker run \
-       -p 7600:7600 \
-       -it indexer-service:latest   
-    ```
-    
-- Installing from source:
-    ```
-    git clone https://github.com/graphprotocol/indexer
-    cd indexer
-    yarn
-
-    cd packages/indexer-service
-    npm install -g
-
-    cd ../indexer-agent
-    npm install -g
-
-    # Run indexer components
-    graph-indexer-agent start ...
-    graph-indexer-service ...
-    ```
-
-### Mission 2: Performing Basic Protocol Functions
+## Mission 2: Performing Basic Protocol Functions
 
 Stay tuned for details!
