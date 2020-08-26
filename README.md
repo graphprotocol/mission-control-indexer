@@ -178,8 +178,11 @@ NPM, Docker, or directly from source below.
 
 ### Successful Completion
 
-1. In order to complete mission 1 of phase 1, you are asked to install the
-   Indexer CLI, connect it to your Indexer agent, and run its `graph indexer status` command:
+Submit the following details using the [Mission Control 1 - Phase 1
+Endpoints](https://airtable.com/shrTnJukfu2jArJnN) form.
+
+1. In order to complete mission 1, you are asked to install the Indexer CLI,
+   connect it to your Indexer agent, and run its `graph indexer status` command:
 
 ```sh
 npm install -g \
@@ -191,7 +194,7 @@ graph indexer connect http://<indexer-agent-host>:<indexer-management-port>/
 graph indexer status
 ```
 
-2. Send us the output of this command via the mission 1 form.
+2. Send us the output of this command via the form linked above.
 3. Configure your Prometheus so it scrapes metrics from the Indexer Service and Agent.
 4. If the Prometheus endpoint has changed since phase 0, submit the
    Prometheus endpoint through the form as well.
