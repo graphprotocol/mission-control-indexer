@@ -1,7 +1,7 @@
 # Indexer Management using Indexer Agent and CLI
 
 The Indexer Agent monitors the network and the indexer's own infrastructure
-and manages which subgraph deployments are indexed and allocated towards on chain. These deployments become the ones that the indexer official serves and can receive paid queries for.
+and manages which subgraph deployments are indexed and allocated towards on chain. These deployments become the ones that the indexer officially serves and can receive paid queries for.
 
 The decisions made by the Indexer Agent are based on indexing rules that can
 either be applied as global defaults or for specific subgraph deployments
@@ -79,7 +79,7 @@ the corresponding deployment. If the subgraph deployment has values above (or
 below) any of the thresholds it will be chosen for indexing.
 
 For example, if the global rule has a `minStake` of `5` (GRT), any subgraph
-deployment which has more that `5` (GRT) of stake allocated to it will be
+deployment which has more than `5` (GRT) of stake allocated to it will be
 indexed. Threshold rules include `maxAllocationPercentage`, `minSignal`,
 `maxSignal`, `minStake`, and `minAverageQueryFees`.
 
