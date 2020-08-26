@@ -50,7 +50,7 @@ by the Indexer.
 
 - [Source code](https://github.com/graphprotocol/indexer/)
 - [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent)
-- [Docker image](https://registry.hub.docker.com/graphprotocol/indexer-agent)
+- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent)
 
 ### Indexer Service
 
@@ -61,7 +61,7 @@ help to facilitate disputes that arise.
 
 - [Source code](https://github.com/graphprotocol/indexer/)
 - [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service)
-- [Docker image](https://registry.hub.docker.com/graphprotocol/indexer-service)
+- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service)
 
 ### Indexer CLI
 
@@ -81,11 +81,13 @@ Indexer Agent.
 
 ### NPM Registry Access
 
-Since at least the indexer CLI requires access to the NPM registry, make sure
-you've got that set up properly:
+For the testnet, we operate a private NPM registry at
+https://testnet.thegraph.com/npm-registry/. Since at least the indexer CLI
+requires access to the NPM registry, make sure you've got that set up
+properly:
 
 ```sh
-npm set registry https://testnet.thegraph.com/npm-registry
+npm set registry https://testnet.thegraph.com/npm-registry/
 npm login
 ```
 

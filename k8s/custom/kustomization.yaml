@@ -10,10 +10,10 @@ images:
     newName: graphprotocol/graph-node-debug
     newTag: latest
   - name: indexer-agent-image
-    newName: registry.hub.docker.com/graphprotocol/indexer-agent
+    newName: graphprotocol/indexer-agent
     newTag: sha-c87bf0f
   - name: indexer-service-image
-    newName: registry.hub.docker.com/graphprotocol/indexer-service
+    newName: graphprotocol/indexer-service
     newTag: sha-c87bf0f
   - name: prometheus-image
     newName: prom/prometheus
