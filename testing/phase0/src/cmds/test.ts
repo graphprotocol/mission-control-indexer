@@ -469,7 +469,7 @@ export default {
     for (let indexer of indexers) {
       testQueue.add(async () => {
         let outputData = []
-        let output = new Buffer('')
+        let output = Buffer.from('')
 
         const log = (msg?: string) => {
           if (msg) {
