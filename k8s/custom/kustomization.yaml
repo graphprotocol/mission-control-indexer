@@ -11,10 +11,10 @@ images:
     newTag: latest
   - name: indexer-agent-image
     newName: registry.hub.docker.com/graphprotocol/indexer-agent
-    newTag: latest
+    newTag: testnet-phase-1-mission-1
   - name: indexer-service-image
     newName: registry.hub.docker.com/graphprotocol/indexer-service
-    newTag: latest
+    newTag: testnet-phase-1-mission-1
   - name: prometheus-image
     newName: prom/prometheus
     newTag: v2.17.1

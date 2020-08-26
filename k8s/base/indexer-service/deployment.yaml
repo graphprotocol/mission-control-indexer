@@ -39,31 +39,29 @@ spec:
             - name: INDEXER_SERVICE_PORT
               value: "7600"
             - name: INDEXER_SERVICE_ETHEREUM
-              value: https://kovan.alchemyapi.io/jsonrpc/demo/
-            - name: INDEXER_SERVICE_CONNEXT_MESSAGING
-              value: nats://35.223.123.63:4222
-            - name: INDEXER_SERVICE_CONNEXT_NODE
-              value: http://35.225.238.237/
+              value: https://rinkeby.alchemyapi.io/jsonrpc/demo/
             - name: INDEXER_SERVICE_GRAPH_NODE_QUERY_ENDPOINT
               value: http://query-node.default.svc.cluster.local/
             - name: INDEXER_SERVICE_GRAPH_NODE_STATUS_ENDPOINT
               value: http://query-node.default.svc.cluster.local/index-node/graphql
-            - name: INDEXER_SERVICE_NETWORK_SUBGRAPH_DEPLOYMENT
-              value: QmXdbqsRbpy5Uj9YHvqrifP5LCrLnv4SUpEtTwFii66Bn2
-            - name: INDEXER_SERVICE_POSTGRES_HOST
+            - name: INDEXER_SERVICE_NETWORK_SUBGRAPH_ENDPOINT
+              value: https://api.thegraph.com/subgraphs/name/graphprotocol/graph-network-rinkeby
+            - name: SERVER_HOST
               valueFrom:
                 secretKeyRef:
                   name: postgres-credentials
                   key: host
-            - name: INDEXER_SERVICE_POSTGRES_USERNAME
+            - name: SERVER_PORT
+              value: "5432"
+            - name: SERVER_DB_USER
               valueFrom:
                 secretKeyRef:
                   name: postgres-credentials
                   key: user
-            - name: INDEXER_SERVICE_POSTGRES_PASSWORD
+            - name: SERVER_DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: postgres-credentials
                   key: password
-            - name: INDEXER_SERVICE_POSTGRES_DATABASE
+            - name: SERVER_DB_NAME
               value: indexer-service

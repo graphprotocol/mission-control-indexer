@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: query-node
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: query-node
   ports:

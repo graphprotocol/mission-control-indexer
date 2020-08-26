@@ -10,7 +10,7 @@ spec:
         paths:
           - path: /*
             backend:
-              serviceName: query-node
+              serviceName: indexer-service
               servicePort: 80
           - path: /prometheus/*
             backend:
