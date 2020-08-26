@@ -70,7 +70,7 @@ indexer management API. The CLI can be used to control the behavior of the
 Indexer Agent.
 
 - [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-cli)
-- [Instructions](./guides/indexer-management.md)
+- [Guide: Indexer Management using Indexer Agent and CLI](./guides/indexer-management.md)
 
 ### Example infrastructure
 
