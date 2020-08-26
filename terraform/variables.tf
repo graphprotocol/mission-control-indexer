@@ -73,3 +73,22 @@ variable "prometheus_disk_size" {
   default = 256
   description = "The size of the disk that stores monitoring data (in GB)"
 }
+
+variable "indexer_mnemonic" {
+  type = string
+  description = "Mnemonic for the indexer's Ethereum private key"
+}
+
+# Temporary
+variable "dockerhub_username" {
+  type = string
+  description = "DockerHub username"
+}
+variable "dockerhub_password" {
+  type = string
+  description = "DockerHub password"
+}
+variable "dockerhub_email" {
+  type = string
+  description = "DockerHub email"
+}

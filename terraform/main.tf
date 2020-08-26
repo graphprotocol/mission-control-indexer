@@ -192,6 +192,16 @@ resource "google_sql_database_instance" "graph" {
   }
 }
 
+resource "google_sql_database" "indexer-agent" {
+  name     = "indexer-agent"
+  instance = google_sql_database_instance.graph.name
+}
+
+resource "google_sql_database" "indexer-service" {
+  name     = "indexer-service"
+  instance = google_sql_database_instance.graph.name
+}
+
 resource "google_sql_database" "graph" {
   name     = "graph"
   instance = google_sql_database_instance.graph.name
@@ -306,5 +316,46 @@ resource "kubernetes_persistent_volume_claim" "nfs" {
     }
     storage_class_name = "standard"
     volume_name = kubernetes_persistent_volume.nfs.metadata.0.name
+  }
+}
+
+#
+# Private Ethereum keys
+#
+resource "kubernetes_secret" "indexer-mnemonic" {
+  metadata {
+    name = "indexer-mnemonic"
+  }
+  data = {
+    mnemonic = var.indexer_mnemonic
+  }
+}
+
+#
+# Secret for pulling private Docker Hub images
+#
+
+resource "kubernetes_secret" "docker-registry" {
+  metadata {
+    name = "docker-registry"
+  }
+  data = {
+    ".dockerconfigjson" = "${data.template_file.docker_config_script.rendered}"
+  }
+
+  type = "kubernetes.io/dockerconfigjson"
+}
+
+#
+# Docker config for pulling private Docker Hub images
+#
+data "template_file" "docker_config_script" {
+  template = "${file("${path.module}/docker-config.json")}"
+  vars     = {
+    docker-server   = "registry.hub.docker.com"
+    docker-username = var.dockerhub_username
+    docker-password = var.dockerhub_password
+    docker-email    = var.dockerhub_email
+    auth            = base64encode("${var.dockerhub_username}:${var.dockerhub_password}")
   }
 }
