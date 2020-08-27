@@ -152,8 +152,10 @@ NPM, Docker, or directly from source below.
       --indexer-geo-coordinates <indexer-lat-long-coordinates. Eg: 37.630768 -119.032631> \
       --postgres-host <postgres-host> \
       --postgres-port 5432 \
+      --postgres-database <indexer-service-database>
       --postgres-username <postgres-username> \
       --postgres-password <postgres-password> \
+      --index-node-ids default \
       --network-subgraph-endpoint https://api.thegraph.com/subgraphs/name/graphprotocol/graph-network-rinkeby \
       --ethereum https://eth-rinkeby.alchemyapi.io/jsonrpc/demo/ \
       --mnemonic <Ethereum mnemonic>
