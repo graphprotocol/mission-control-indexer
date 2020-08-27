@@ -161,7 +161,7 @@ NPM, Docker, or directly from source below.
   export SERVER_HOST=<postgres-host>
   export SERVER_PORT=<postgres-port>
   export SERVER_DB_NAME=<postgres-db> # Don't use the same as your Graph Node(s)!
-  export SERVER_DB_USERNAME=<postgres-username>
+  export SERVER_DB_USER=<postgres-username>
   export SERVER_DB_PASSWORD=<postgres-password>
 
   graph-indexer-service start \
