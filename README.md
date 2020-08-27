@@ -226,7 +226,7 @@ graph indexer status
 ```
 
 2. Send us the output of this command via the form linked above.
-3. Configure your Prometheus so it scrapes metrics from the Indexer Service and Agent.
+3. Configure your Prometheus so it scrapes metrics from the Indexer Service (note: we'll add metrics for the Indexer Agent in phase 2).
 4. If the Prometheus endpoint has changed since phase 0, submit the
    Prometheus endpoint through the form as well.
 
