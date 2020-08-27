@@ -10,25 +10,27 @@ These releases fix the following issues:
 
 ## How to update
 
-NPM:
+1. Install updates:
 
-```sh
-# Install the latest
-npm install -g @graphprotocol/indexer-agent
-npm install -g @graphprotocol/indexer-cli
+   NPM:
+   
+   ```sh
+   # Install the latest
+   npm install -g @graphprotocol/indexer-agent
+   npm install -g @graphprotocol/indexer-cli
+   
+   # Install specific versions
+   npm install -g @graphprotocol/indexer-agent@0.2.2
+   npm install -g @graphprotocol/indexer-cli@0.1.1
+   ```
+   
+   Docker:
+   
+   ```sh
+   docker pull graphprotocol/indexer-agent:sha-42653f4
+   
+   # Optional, but can't hurt:
+   docker pull graphprotocol/indexer-service:sha-42653f4
+   ```
 
-# Install specific versions
-npm install -g @graphprotocol/indexer-agent@0.2.2
-npm install -g @graphprotocol/indexer-cli@0.1.1
-```
-
-Docker:
-
-```sh
-docker pull graphprotocol/indexer-agent:sha-42653f4
-
-# Optional, but can't hurt:
-docker pull graphprotocol/indexer-service:sha-42653f4
-```
-
-After this, restart the indexer agent (and, optionally, the indexer service).
+2. Restart indexer agent and, optionally, indexer service.
