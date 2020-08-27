@@ -14,6 +14,7 @@ assist you in getting set up.
 
 - [FAQ](./faq.md)
 - [Community Wiki](https://github.com/graphprotocol/mission-control-indexer/wiki) (please edit responsibly!)
+- [Guides](./guides/README.md)
 
 # Past Phases
 
