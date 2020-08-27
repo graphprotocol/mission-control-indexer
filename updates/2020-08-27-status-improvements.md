@@ -17,5 +17,8 @@ resolve the problems:
    npm install -g @graphprotocol/indexer-cli
    ```
 
-2. Run `graph indexer status` to get a more detailed report for your
+2. Make sure you have also [updated and restarted the Indexer
+   Agent](./2020-08-27-bugfix-releases.md).
+
+3. Run `graph indexer status` to get a more detailed report for your
    endpoints.
