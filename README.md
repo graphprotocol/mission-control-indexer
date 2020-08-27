@@ -28,7 +28,7 @@ Phase 1 is divided into two missions:
 
 ## Important Updates
 
-- [Indexer Agent and CLI bugfix
+- 2020-08-27: [Indexer Agent and CLI bugfix
   releases](./updates/2020-08-27-bugfix-releases.md) — properly detect
   on-chain registration and service status.
 
