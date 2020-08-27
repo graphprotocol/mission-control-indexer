@@ -26,6 +26,12 @@ Phase 1 is divided into two missions:
 1. Set up indexer components
 2. Perform basic protocol actions
 
+## Important Updates
+
+- [Indexer Agent and CLI bugfix
+  releases](./updates/2020-08-27-bugfix-releases.md) — properly detect
+  on-chain registration and service status.
+
 ## Mission 1: Set up Indexer Components
 
 To prepare for the second mission of phase 1, indexers will need to extend
@@ -164,6 +170,7 @@ NPM, Docker, or directly from source below.
   ```
 
 - Using Docker:
+
   ```
   # Run indexer agent
   # Note: This assumes a `graph-node` is accessible on localhost with the admin endpoint on port 8020 and status endpoint on port 8030.
@@ -181,6 +188,7 @@ NPM, Docker, or directly from source below.
      -it graphprotocol/indexer-service:sha-c87bf0f \
     ...env vars...
   ```
+
 - Installing from source:
 
   ```
