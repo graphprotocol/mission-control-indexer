@@ -43,7 +43,9 @@ and
 https://prometheus.io/docs/prometheus/latest/configuration/configuration/#static_config
 in particular.
 
-## What does the `ingress.kubernetes.io/target-proxy` in the k8s setup mean?
+## Phase 0
+
+### What does the `ingress.kubernetes.io/target-proxy` in the k8s setup mean?
 
 That is only useful if you want to set up your ingress so it's accessible
 through Google's global HTTPS load balancer. We found that to be the easiest
@@ -54,8 +56,6 @@ take it.
 
 If you are interested in the HTTPS setup, here's a quick writeup:
 https://jannis.github.io/notes/google-cloud-https.
-
-## Phase 0
 
 ### How do I deploy phase 0 subgraphs to the Graph nodes?
 
