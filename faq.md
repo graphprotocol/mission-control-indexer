@@ -89,3 +89,13 @@ http post <GRAPH_NODE>:8020 \
   method="subgraph_deploy" \
   params:='{"name": "molochventures/moloch", "ipfs_hash": "QmTXzATwNfgGVukV1fX2T6xw9f6LAYRVWpsdXyRWzUR2H9", "node_id": "<target-node-id>"}'
 ```
+
+## Phase 1
+
+### Can I reregister my indexer on chain?
+
+Yes, of course. All you have to do is:
+
+1. Change the registration parameters, e.g. the `--public-indexer-url` or
+   `INDEXER_AGENT_PUBLIC_INDEXER_URL` that are passed to the indexer agent.
+2. Restart the indexer agent. It should automatically re-register.
