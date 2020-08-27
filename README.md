@@ -31,6 +31,9 @@ Phase 1 is divided into two missions:
 - 2020-08-27: [Indexer Agent and CLI bugfix
   releases](./updates/2020-08-27-bugfix-releases.md) — properly detect
   on-chain registration and service status.
+- 2020-08-27: [Indexer CLI status
+  improvements](./updates/2020-08-27-status-improvements.md) — detailed status
+  reports for endpoints, with troubleshooting help.
 
 ## Mission 1: Set up Indexer Components
 
