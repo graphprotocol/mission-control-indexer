@@ -60,7 +60,7 @@ by the Indexer.
 
 - [Source code](https://github.com/graphprotocol/indexer/)
 - [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent)
-- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent) (tag: `sha-42653f4`)
+- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent) (tag: `sha-54d4905`)
 
 ### Indexer Service
 
@@ -71,7 +71,7 @@ help to facilitate disputes that arise.
 
 - [Source code](https://github.com/graphprotocol/indexer/)
 - [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service)
-- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service) (tag: `sha-42653f4`)
+- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service) (tag: `sha-54d4905`)
 
 ### Indexer CLI
 
