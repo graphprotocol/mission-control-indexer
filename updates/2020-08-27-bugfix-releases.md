@@ -13,8 +13,13 @@ These releases fix the following issues:
 NPM:
 
 ```sh
+# Install the latest
 npm install -g @graphprotocol/indexer-agent
 npm install -g @graphprotocol/indexer-cli
+
+# Install specific versions
+npm install -g @graphprotocol/indexer-agent@0.2.2
+npm install -g @graphprotocol/indexer-cli@0.1.1
 ```
 
 Docker:
