@@ -170,6 +170,7 @@ NPM, Docker, or directly from source below.
   graph-indexer-service start \
       --port 80 \
       --graph-node-query-endpoint http://localhost:8000/ \
+      --graph-node-status-endpoint http://localhost:8030/graphql \
       --network-subgraph-endpoint https://api.thegraph.com/subgraphs/name/graphprotocol/graph-network-rinkeby \
       --ethereum https://eth-rinkeby.alchemyapi.io/jsonrpc/demo/ \
       --mnemonic <Ethereum mnemonic> # This must be the same as the Indexer Agent!
