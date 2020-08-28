@@ -232,6 +232,13 @@ graph indexer connect http://<indexer-agent-host>:<indexer-management-port>/
 graph indexer status
 ```
 
+Currently this library uses libsecret so you may need to install it before running npm install.
+Depending on your distribution, you will need to run the following command:
+```
+Debian/Ubuntu: sudo apt-get install libsecret-1-dev
+Red Hat-based: sudo yum install libsecret-devel
+Arch Linux: sudo pacman -S libsecret
+```
 2. Send us the output of this command via the form linked above.
 3. Configure your Prometheus so it scrapes metrics from the Indexer Service (note: we'll add metrics for the Indexer Agent in phase 2).
 4. If the Prometheus endpoint has changed since phase 0, submit the
