@@ -26,7 +26,7 @@ CLI does not need to run on the same server or cluster.
 4. Allow accessing the indexer management API of the `indexer-agent`
    from your current machine.
    ```sh
-   kubectl port-forward pod/<indexer-agent-pod> 8000:18000
+   kubectl port-forward pod/<indexer-agent-pod> 18000:8000
    ```
 5. Connect the Indexer CLI to the indexer management API.
     ```yaml
