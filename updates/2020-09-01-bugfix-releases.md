@@ -6,7 +6,7 @@ The releases are part of this update:
 
 - @graphprotocol/indexer-cli: 0.1.4
 - @graphprotocol/indexer-agent: 0.2.5
-- @graphprotocol/indexer-service: 0.2.5 (no changes)
+- @graphprotocol/indexer-service: 0.2.5
 
 These are primarily bugfix release and resolve the following problems:
 
@@ -21,6 +21,11 @@ These are primarily bugfix release and resolve the following problems:
   - Validate deployment IDs to avoid broken indexing rules
   - Display and use correct token/allocation amounts
   - Simplify internal logic for parsing, fetching and displaying indexing rules
+
+- Indexer Service
+  - Serve metrics from `/metrics` instead of `/` (**NOTE: This is a breaking
+    change. Make sure to update your Prometheus configuration after
+    updating.**)
 
 ## How to update
 
