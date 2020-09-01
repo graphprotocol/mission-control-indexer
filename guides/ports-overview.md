@@ -22,7 +22,7 @@ the CLI flags and environment variables that can be used to change the ports.
 ### Indexer Service
 
 | Port | Purpose                                         | Routes                                                              | CLI argument | Environment variable   |
-| ---- | ----------------------------------------------- | ------------------------------------------------------------------- | ------------ |
+| ---- | ----------------------------------------------- | ------------------------------------------------------------------- | ------------ | ---------------------- |
 | 7600 | GraphQL HTTP server (for paid subgraph queries) | `/subgraphs/id/...` <br/> `/status` <br/> `/channel-messages-inbox` | `--port`     | `INDEXER_SERVICE_PORT` |
 | 7300 | Prometheus metrics                              | `/metrics`                                                          | -            | -                      |
 
