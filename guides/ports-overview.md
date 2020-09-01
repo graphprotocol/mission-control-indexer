@@ -11,23 +11,23 @@ the CLI flags and environment variables that can be used to change the ports.
 
 ### Graph Node
 
-| Port | Purpose                                    | CLI argument        | Environment variable |
-| ---- | ------------------------------------------ | ------------------- | -------------------- |
-| 8000 | GraphQL HTTP server (for subgraph queries) | `--http-port`       | -                    |
-| 8001 | GraphQL WS (for subgraph subscriptions)    | `--ws-port`         | -                    |
-| 8020 | JSON-RPC (for managing deployments)        | `--admin-port`      | -                    |
-| 8030 | Subgraph indexing status API               | `--index-node-port` | -                    |
-| 8040 | Prometheus metrics                         | `--metrics-port`    | -                    |
+| Port | Purpose                                    | Routes                                             | CLI argument        | Environment variable |
+| ---- | ------------------------------------------ | -------------------------------------------------- | ------------------- | -------------------- |
+| 8000 | GraphQL HTTP server (for subgraph queries) | `/subgraphs/id/...` <br/> `subgraphs/name/.../...` | `--http-port`       | -                    |
+| 8001 | GraphQL WS (for subgraph subscriptions)    | `/subgraphs/id/...` <br/> `subgraphs/name/.../...` | `--ws-port`         | -                    |
+| 8020 | JSON-RPC (for managing deployments)        | `/`                                                | `--admin-port`      | -                    |
+| 8030 | Subgraph indexing status API               | `/graphql`                                         | `--index-node-port` | -                    |
+| 8040 | Prometheus metrics                         | `/metrics`                                         | `--metrics-port`    | -                    |
 
 ### Indexer Service
 
-| Port | Purpose                                         | CLI argument | Environment variable   |
-| ---- | ----------------------------------------------- | ------------ | ---------------------- |
-| 7600 | GraphQL HTTP server (for paid subgraph queries) | `--port`     | `INDEXER_SERVICE_PORT` |
-| 7300 | Prometheus metrics                              | -            | -                      |
+| Port | Purpose                                         | Routes                                                              | CLI argument | Environment variable   |
+| ---- | ----------------------------------------------- | ------------------------------------------------------------------- | ------------ |
+| 7600 | GraphQL HTTP server (for paid subgraph queries) | `/subgraphs/id/...` <br/> `/status` <br/> `/channel-messages-inbox` | `--port`     | `INDEXER_SERVICE_PORT` |
+| 7300 | Prometheus metrics                              | `/metrics`                                                          | -            | -                      |
 
 ### Indexer Agent
 
-| Port | Purpose                                      | CLI argument                | Environment variable                    |
-| ---- | -------------------------------------------- | --------------------------- | --------------------------------------- |
-| 8000 | Indexer management API (for `graph indexer`) | `--indexer-management-port` | `INDEXER_AGENT_INDEXER_MANAGEMENT_PORT` |
+| Port | Purpose                                      | Routes | CLI argument                | Environment variable                    |
+| ---- | -------------------------------------------- | ------ | --------------------------- | --------------------------------------- |
+| 8000 | Indexer management API (for `graph indexer`) | `/`    | `--indexer-management-port` | `INDEXER_AGENT_INDEXER_MANAGEMENT_PORT` |
