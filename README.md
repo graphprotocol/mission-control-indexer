@@ -35,6 +35,10 @@ Phase 1 is divided into two missions:
 2. 2020-08-27: [Indexer CLI status
    improvements](./updates/2020-08-27-status-improvements.md) — detailed status
    reports for endpoints, with troubleshooting help.
+3. 2020-09-01: [Indexer Agent and CLI bugfix
+   releases](./updates/2020-09-01-bugfix-releases.md) - avoid failing
+   transactions, show/use correct token/allocation amounts, handle errors
+   better.
 
 ## Mission 1: Set up Indexer Components
 
@@ -180,19 +184,20 @@ NPM, Docker, or directly from source below.
 
   ```
   # Run indexer agent
-  # Note: This assumes a `graph-node` is accessible on localhost with the admin endpoint on port 8020 and status endpoint on port 8030.
+  # Note: This assumes a `graph-node` is accessible on localhost with
+  # the admin endpoint on port 8020 and status endpoint on port 8030.
   docker run \
     -p 8000:8000 \
     -p 8020:8020 \
     -p 8030:8030 \
     -p 18000:18000 \
-    -it graphprotocol/indexer-agent:sha-c87bf0f \
+    -it graphprotocol/indexer-agent:sha-573cee8 \
     ...env vars...
 
   # Run indexer service
   docker run \
      -p 7600:7600 \
-     -it graphprotocol/indexer-service:sha-c87bf0f \
+     -it graphprotocol/indexer-service:sha-573cee8 \
     ...env vars...
   ```
 
