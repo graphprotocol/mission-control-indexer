@@ -724,14 +724,20 @@ data:
       "editable": true,
       "gnetId": null,
       "graphTooltip": 0,
-      "id": 1,
-      "iteration": 1589415329541,
+      "id": 4,
+      "iteration": 1599008235566,
       "links": [],
       "panels": [
         {
           "cacheTimeout": null,
           "columns": [],
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fontSize": "100%",
           "gridPos": {
             "h": 11,
@@ -792,117 +798,136 @@ data:
           ],
           "targets": [
             {
-              "expr": "sum(increase([[subgraph_hash]]_sync_total_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "total",
               "refId": "L"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_unknown_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"unknown\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "unknown",
               "refId": "B"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_scan_blocks_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"scan_blocks\"}[1y]))",
               "format": "time_series",
               "instant": true,
+              "interval": "",
               "legendFormat": "scan_blocks",
               "refId": "A"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_module_init_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"module_init\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "module_init",
               "refId": "C"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_run_handler_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"run_handler\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "run_handler",
               "refId": "D"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_transact_block_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"transact_block\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "transact_block",
               "refId": "G"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_host_export_other_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_other\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "host_export_other",
               "refId": "F"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_host_export_store_get_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_store_get\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "host_export_store_get",
               "refId": "E"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_host_export_store_set_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_store_set\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "host_export_store_set",
               "refId": "H"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_host_export_ethereum_call_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_ethereum_call\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "host_export_ethereum_call",
               "refId": "I"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_host_export_ipfs_cat_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_ipfs_cat\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "host_export_ipfs_cat",
               "refId": "J"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_host_export_ipfs_map_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"host_export_ipfs_map\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "host_export_ipfs_map",
               "refId": "K"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_store_get_asc_new_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"store_get_asc_new\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "store_get_asc_new",
               "refId": "M"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_apply_entity_modifications_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"apply_entity_modifications\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "apply_entity_modifications",
               "refId": "N"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_check_interface_entity_uniqueness_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"check_interface_entity_uniqueness\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "check_interface_entity_uniqueness",
               "refId": "O"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_apply_entity_modifications_update_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"apply_entity_modifications_update\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "apply_entity_modifications_update",
               "refId": "P"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_apply_entity_modifications_insert_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"apply_entity_modifications_insert\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "apply_entity_modifications_insert",
               "refId": "Q"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_as_modifications_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"as_modifications\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "as_modifications",
               "refId": "R"
             },
             {
-              "expr": "sum(increase([[subgraph_hash]]_entity_cache_evict_secs[1y]))",
+              "expr": "sum(increase(deployment_sync_secs{deployment=\"[[deployment]]\",section=\"entity_cache_evict\"}[1y]))",
               "instant": true,
+              "interval": "",
               "legendFormat": "entity_cache_evict",
               "refId": "S"
             }
@@ -911,7 +936,7 @@ data:
           "timeShift": null,
           "title": "Time spent while indexing",
           "transform": "timeseries_to_rows",
-          "type": "table"
+          "type": "table-old"
         },
         {
           "aliasColors": {},
@@ -919,6 +944,13 @@ data:
           "dashLength": 10,
           "dashes": false,
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 7,
           "fillGradient": 0,
           "gridPos": {
@@ -941,10 +973,8 @@ data:
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
-          "options": {
-            "dataLinks": []
-          },
           "percentage": false,
+          "pluginVersion": "7.1.3",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -959,7 +989,8 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(increase(subgraph_eth_rpc_request_duration_[[subgraph_hash]][1m])) by (method)",
+              "expr": "sum(increase(deployment_eth_rpc_request_duration{deployment=\"[[deployment]]\"}[1m])) by (method) * 1000",
+              "interval": "",
               "legendFormat": "{{method}}",
               "refId": "A"
             }
@@ -985,7 +1016,7 @@ data:
           "yaxes": [
             {
               "format": "short",
-              "label": "Requests per minute",
+              "label": "ms",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -1011,6 +1042,13 @@ data:
           "dashLength": 10,
           "dashes": false,
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -1023,20 +1061,18 @@ data:
           "id": 12,
           "legend": {
             "avg": false,
-            "current": false,
+            "current": true,
             "max": false,
             "min": false,
-            "show": false,
+            "show": true,
             "total": false,
-            "values": false
+            "values": true
           },
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
-          "options": {
-            "dataLinks": []
-          },
           "percentage": false,
+          "pluginVersion": "7.1.3",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1044,6 +1080,14 @@ data:
             {
               "alias": "/value/",
               "color": "#FADE2A"
+            },
+            {
+              "alias": "number of reverted blocks",
+              "yaxis": 1
+            },
+            {
+              "alias": "last reverted block number",
+              "yaxis": 2
             }
           ],
           "spaceLength": 10,
@@ -1051,16 +1095,28 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "increase(subgraph_reverted_blocks_[[subgraph_hash]][1m])",
-              "legendFormat": "value",
+              "expr": "irate(deployment_reverted_blocks{deployment=\"[[deployment]]\"}[1m])",
+              "hide": false,
+              "instant": false,
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "number of reverted blocks",
               "refId": "A"
+            },
+            {
+              "expr": "deployment_reverted_blocks{deployment=\"[[deployment]]\"}",
+              "hide": false,
+              "instant": false,
+              "interval": "",
+              "legendFormat": "last reverted block number",
+              "refId": "B"
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Reverted Blocks",
+          "title": "Last Reverted Block Number",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1076,24 +1132,25 @@ data:
           },
           "yaxes": [
             {
-              "format": "short",
-              "label": null,
+              "decimals": null,
+              "format": "none",
+              "label": "",
               "logBase": 1,
               "max": null,
-              "min": null,
+              "min": "0",
               "show": true
             },
             {
-              "format": "short",
+              "format": "none",
               "label": null,
               "logBase": 1,
               "max": null,
-              "min": null,
+              "min": "0",
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
+            "align": true,
             "alignLevel": null
           }
         },
@@ -1108,6 +1165,12 @@ data:
             "#d44a3a"
           ],
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "format": "s",
           "gauge": {
             "maxValue": 100,
@@ -1162,9 +1225,11 @@ data:
           "tableColumn": "Value",
           "targets": [
             {
-              "expr": "[[subgraph_hash]]_get_entity_conn_secs",
+              "expr": "deployment_get_entity_conn_secs{deployment=\"subgraphs\"}",
               "format": "table",
               "instant": true,
+              "interval": "",
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -1186,6 +1251,12 @@ data:
         {
           "content": "<br/> \n<center> \n  <h1>Block Processing / Handler Execution</h1> \n</center>",
           "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 2,
             "w": 24,
@@ -1194,6 +1265,11 @@ data:
           },
           "id": 33,
           "mode": "html",
+          "options": {
+            "content": "<br/> \n<center> \n  <h1>Block Processing / Handler Execution</h1> \n</center>",
+            "mode": "html"
+          },
+          "pluginVersion": "7.1.0",
           "timeFrom": null,
           "timeShift": null,
           "title": "",
@@ -1206,6 +1282,13 @@ data:
           "dashLength": 10,
           "dashes": false,
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 7,
           "fillGradient": 0,
           "gridPos": {
@@ -1229,10 +1312,8 @@ data:
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
-          "options": {
-            "dataLinks": []
-          },
           "percentage": false,
+          "pluginVersion": "7.1.3",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1248,9 +1329,10 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(increase(subgraph_block_processing_duration_[[subgraph_hash]]_sum[1m]))",
+              "expr": "sum(increase(deployment_block_processing_duration_sum{deployment=\"[[deployment]]\"}[1m]))",
               "format": "time_series",
               "instant": false,
+              "interval": "",
               "legendFormat": " ",
               "refId": "A"
             }
@@ -1311,6 +1393,12 @@ data:
           "dataFormat": "tsbuckets",
           "datasource": "prometheus",
           "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 6,
             "w": 24,
@@ -1327,8 +1415,9 @@ data:
           "reverseYBuckets": false,
           "targets": [
             {
-              "expr": "sum(increase(subgraph_block_processing_duration_[[subgraph_hash]]_bucket[1m])) by (le)",
+              "expr": "sum(increase(deployment_block_processing_duration_bucket{deployment=\"[[deployment]]\"}[1m])) by (le)",
               "format": "heatmap",
+              "interval": "",
               "legendFormat": "{{le}}",
               "refId": "A"
             }
@@ -1373,6 +1462,12 @@ data:
           },
           "dataFormat": "tsbuckets",
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 6,
             "w": 24,
@@ -1390,8 +1485,9 @@ data:
           "reverseYBuckets": false,
           "targets": [
             {
-              "expr": "sum(increase(subgraph_transact_block_operations_duration_[[subgraph_hash]]_bucket[1m])) by (le)",
+              "expr": "sum(increase(deployment_transact_block_operations_duration_bucket{deployment=\"[[deployment]]\"}[1m])) by (le)",
               "format": "heatmap",
+              "interval": "",
               "legendFormat": "{{le}}",
               "refId": "A"
             }
@@ -1436,6 +1532,12 @@ data:
           },
           "dataFormat": "tsbuckets",
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 6,
             "w": 24,
@@ -1452,8 +1554,9 @@ data:
           "reverseYBuckets": false,
           "targets": [
             {
-              "expr": "sum(increase(subgraph_host_fn_execution_time_[[subgraph_hash]]_bucket{host_fn_name=\"[[host_fn]]\"}[1m])) by (le)",
+              "expr": "sum(increase(deployment_host_fn_execution_time_bucket{deployment=\"[[deployment]]\",host_fn_name=\"[[host_fn]]\"}[1m])) by (le)",
               "format": "heatmap",
+              "interval": "",
               "legendFormat": "{{le}}",
               "refId": "A"
             }
@@ -1490,6 +1593,13 @@ data:
           "dashLength": 10,
           "dashes": false,
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -1512,10 +1622,8 @@ data:
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
-          "options": {
-            "dataLinks": []
-          },
           "percentage": true,
+          "pluginVersion": "7.1.3",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1525,8 +1633,9 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(increase(subgraph_host_fn_execution_time_[[subgraph_hash]]_sum[1m])) by (host_fn_name)",
+              "expr": "sum(increase(deployment_host_fn_execution_time_sum{deployment=\"[[deployment]]\"}[1m])) by (host_fn_name)",
               "format": "time_series",
+              "interval": "",
               "legendFormat": "{{host_fn_name}}",
               "refId": "A"
             }
@@ -1586,6 +1695,12 @@ data:
           },
           "dataFormat": "tsbuckets",
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 6,
             "w": 24,
@@ -1602,8 +1717,9 @@ data:
           "reverseYBuckets": false,
           "targets": [
             {
-              "expr": "sum(increase(subgraph_block_trigger_count_[[subgraph_hash]]_bucket[1m])) by (le)",
+              "expr": "sum(increase(deployment_block_trigger_count_bucket{deployment=\"[[deployment]]\"}[1m])) by (le)",
               "format": "heatmap",
+              "interval": "",
               "legendFormat": "{{le}}",
               "refId": "A"
             }
@@ -1648,6 +1764,12 @@ data:
           },
           "dataFormat": "tsbuckets",
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 6,
             "w": 24,
@@ -1664,8 +1786,9 @@ data:
           "reverseYBuckets": false,
           "targets": [
             {
-              "expr": "sum(increase(subgraph_handler_execution_time_[[subgraph_hash]]_bucket{handler=\"[[handler]]\"}[5m])) by (le)",
+              "expr": "sum(increase(deployment_handler_execution_time_bucket{deployment=\"[[deployment]]\",handler=\"[[handler]]\"}[5m])) by (le)",
               "format": "heatmap",
+              "interval": "",
               "legendFormat": "{{le}}",
               "refId": "A"
             }
@@ -1702,6 +1825,13 @@ data:
           "dashLength": 10,
           "dashes": false,
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 7,
           "fillGradient": 0,
           "gridPos": {
@@ -1724,10 +1854,8 @@ data:
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
-          "options": {
-            "dataLinks": []
-          },
           "percentage": true,
+          "pluginVersion": "7.1.3",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -1737,8 +1865,9 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(increase(subgraph_handler_execution_time_[[subgraph_hash]]_sum[1m])) by (handler)",
+              "expr": "sum(increase(deployment_handler_execution_time_sum{deployment=\"[[deployment]]\"}[1m])) by (handler)",
               "format": "time_series",
+              "interval": "",
               "legendFormat": "{{handler}}",
               "refId": "A"
             }
@@ -1787,6 +1916,12 @@ data:
         {
           "content": "</br>\n<center> \n  <h1>GraphQL Server</h1> \n</center>",
           "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 2,
             "w": 12,
@@ -1795,6 +1930,11 @@ data:
           },
           "id": 32,
           "mode": "html",
+          "options": {
+            "content": "</br>\n<center> \n  <h1>GraphQL Server</h1> \n</center>",
+            "mode": "html"
+          },
+          "pluginVersion": "7.1.0",
           "timeFrom": null,
           "timeShift": null,
           "title": "",
@@ -1804,6 +1944,12 @@ data:
         {
           "content": "<br/> \n<center> \n  <h1>Block Ingestor</h1> \n</center>",
           "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 2,
             "w": 12,
@@ -1812,6 +1958,11 @@ data:
           },
           "id": 31,
           "mode": "html",
+          "options": {
+            "content": "<br/> \n<center> \n  <h1>Block Ingestor</h1> \n</center>",
+            "mode": "html"
+          },
+          "pluginVersion": "7.1.0",
           "timeFrom": null,
           "timeShift": null,
           "title": "",
@@ -1833,6 +1984,12 @@ data:
           },
           "dataFormat": "tsbuckets",
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 9,
             "w": 8,
@@ -1852,9 +2009,10 @@ data:
           "reverseYBuckets": false,
           "targets": [
             {
-              "expr": "sum(increase(subgraph_query_execution_time_bucket{subgraph_deployment=\"[[subgraph_hash]]\"}[1m])) by (le)",
+              "expr": "sum(increase(query_execution_time_bucket{deployment=\"[[deployment]]\"}[1m])) by (le)",
               "format": "heatmap",
               "instant": false,
+              "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{le}}",
               "refId": "A"
@@ -1862,7 +2020,7 @@ data:
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Query Execution Time Histogram ([[subgraph_hash]])",
+          "title": "Query Execution Time Histogram",
           "tooltip": {
             "show": true,
             "showHistogram": false
@@ -1893,6 +2051,13 @@ data:
           "dashLength": 10,
           "dashes": false,
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -1916,21 +2081,18 @@ data:
           "linewidth": 1,
           "links": [],
           "nullPointMode": "null",
-          "options": {
-            "dataLinks": []
-          },
           "percentage": false,
-          "pluginVersion": "6.5.1",
+          "pluginVersion": "7.1.3",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
-          "repeat": "subgraph_hash",
+          "repeat": "deployment",
           "repeatDirection": "v",
           "scopedVars": {
-            "subgraph_hash": {
+            "deployment": {
               "selected": true,
-              "text": "QmWVRSE59uqfuanp2goVbAoXqwc6wfVfYnxg7bGswjP9mo",
-              "value": "QmWVRSE59uqfuanp2goVbAoXqwc6wfVfYnxg7bGswjP9mo"
+              "text": "QmNQz8mhUnkAcfDDEuKZaVdBwffZtYfoUtbQ9NYpaSS1QH",
+              "value": "QmNQz8mhUnkAcfDDEuKZaVdBwffZtYfoUtbQ9NYpaSS1QH"
             }
           },
           "seriesOverrides": [],
@@ -1939,9 +2101,10 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(increase(subgraph_query_execution_time_bucket{subgraph_deployment=\"[[subgraph_hash]]\"}[1m])) by (le)",
+              "expr": "sum(increase(query_execution_time_bucket{deployment=\"[[deployment]]\"}[1m])) by (le)",
               "format": "heatmap",
               "instant": false,
+              "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{le}}",
               "refId": "A"
@@ -1951,7 +2114,7 @@ data:
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Query Execution Time Histogram ([[subgraph_hash]])",
+          "title": "Query Execution Time Histogram ([[deployment]])",
           "tooltip": {
             "shared": false,
             "sort": 0,
@@ -1995,6 +2158,12 @@ data:
           "columns": [],
           "datasource": "prometheus",
           "description": "block_ingestor_panel",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fontSize": "100%",
           "gridPos": {
             "h": 7,
@@ -2142,9 +2311,10 @@ data:
           ],
           "targets": [
             {
-              "expr": "ethereum_chain_head_number",
+              "expr": "ethereum_chain_head_number{}",
               "format": "table",
               "instant": true,
+              "interval": "",
               "legendFormat": "{{network}}",
               "refId": "A"
             }
@@ -2153,7 +2323,7 @@ data:
           "timeShift": null,
           "title": "",
           "transform": "table",
-          "type": "table"
+          "type": "table-old"
         },
         {
           "aliasColors": {},
@@ -2163,6 +2333,13 @@ data:
           "datasource": "prometheus",
           "decimals": 1,
           "description": "block_ingestor_panel",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
@@ -2189,10 +2366,8 @@ data:
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
-          "options": {
-            "dataLinks": []
-          },
           "percentage": false,
+          "pluginVersion": "7.1.3",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2202,8 +2377,9 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(increase(ethereum_chain_head_number{kubernetes_pod_name=\"index-node-block-ingestor-0\"}[1m])) by (network)",
+              "expr": "sum(increase(ethereum_chain_head_number{kubernetes_pod_name=\"index-node-0\"}[1m])) by (network)",
               "instant": false,
+              "interval": "",
               "legendFormat": "{{network}}",
               "refId": "A"
             }
@@ -2256,6 +2432,13 @@ data:
           "dashLength": 10,
           "dashes": false,
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 8,
           "fillGradient": 0,
           "gridPos": {
@@ -2282,11 +2465,8 @@ data:
           "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
-          "options": {
-            "dataLinks": []
-          },
           "percentage": false,
-          "pluginVersion": "6.5.1",
+          "pluginVersion": "7.1.3",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2297,9 +2477,10 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(increase(subgraph_query_execution_time_count[1m])) by (subgraph_deployment)",
+              "expr": "sum(increase(query_execution_time_count[1m])) by (deployment)",
               "format": "time_series",
               "instant": false,
+              "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{subgraph_deployment}}",
               "refId": "A"
@@ -2353,6 +2534,13 @@ data:
           "dashLength": 10,
           "dashes": false,
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
@@ -2379,11 +2567,8 @@ data:
           "linewidth": 2,
           "links": [],
           "nullPointMode": "null",
-          "options": {
-            "dataLinks": []
-          },
           "percentage": false,
-          "pluginVersion": "6.5.1",
+          "pluginVersion": "7.1.3",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2394,11 +2579,12 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(rate(subgraph_query_execution_time_count[1m])) by (subgraph_deployment)",
+              "expr": "sum(rate(query_execution_time_count[1m])) by (deployment)",
               "format": "time_series",
               "instant": false,
+              "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{subgraph_deployment}}",
+              "legendFormat": "{{deployment}}",
               "refId": "A"
             }
           ],
@@ -2423,7 +2609,7 @@ data:
           "yaxes": [
             {
               "format": "locale",
-              "label": "Queries per minute per minute",
+              "label": "Queries per minute",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -2450,6 +2636,13 @@ data:
           "dashLength": 10,
           "dashes": false,
           "datasource": "prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 7,
           "fillGradient": 0,
           "gridPos": {
@@ -2476,11 +2669,8 @@ data:
           "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
-          "options": {
-            "dataLinks": []
-          },
           "percentage": false,
-          "pluginVersion": "6.5.1",
+          "pluginVersion": "7.1.3",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2491,9 +2681,10 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "increase(subgraph_query_failed_execution_time_count[1m])",
+              "expr": "increase(query_failed_execution_time_count[1m])",
               "format": "time_series",
               "instant": false,
+              "interval": "",
               "intervalFactor": 1,
               "legendFormat": "{{subgraph_deployment}}",
               "refId": "A"
@@ -2541,8 +2732,8 @@ data:
           }
         }
       ],
-      "refresh": "",
-      "schemaVersion": 22,
+      "refresh": false,
+      "schemaVersion": 26,
       "style": "dark",
       "tags": [],
       "templating": {
@@ -2550,30 +2741,23 @@ data:
           {
             "allValue": null,
             "current": {
-              "tags": [],
-              "text": "QmWVRSE59uqfuanp2goVbAoXqwc6wfVfYnxg7bGswjP9mo",
-              "value": "QmWVRSE59uqfuanp2goVbAoXqwc6wfVfYnxg7bGswjP9mo"
+              "selected": false,
+              "text": "QmNQz8mhUnkAcfDDEuKZaVdBwffZtYfoUtbQ9NYpaSS1QH",
+              "value": "QmNQz8mhUnkAcfDDEuKZaVdBwffZtYfoUtbQ9NYpaSS1QH"
             },
             "datasource": "postgres",
             "definition": "select subgraph from deployment_schemas where id > 0",
             "hide": 0,
             "includeAll": false,
-            "index": -1,
             "label": null,
             "multi": false,
-            "name": "subgraph_hash",
-            "options": [
-              {
-                "selected": true,
-                "text": "QmWVRSE59uqfuanp2goVbAoXqwc6wfVfYnxg7bGswjP9mo",
-                "value": "QmWVRSE59uqfuanp2goVbAoXqwc6wfVfYnxg7bGswjP9mo"
-              }
-            ],
+            "name": "deployment",
+            "options": [],
             "query": "select subgraph from deployment_schemas where id > 0",
-            "refresh": 0,
+            "refresh": 1,
             "regex": "",
             "skipUrlSync": false,
-            "sort": 0,
+            "sort": 5,
             "tagValuesQuery": "",
             "tags": [],
             "tagsQuery": "",
@@ -2583,23 +2767,23 @@ data:
           {
             "allValue": null,
             "current": {
-              "text": "handleCommit",
-              "value": "handleCommit"
+              "selected": false,
+              "text": "handleBalanceTransfer",
+              "value": "handleBalanceTransfer"
             },
             "datasource": "prometheus",
-            "definition": "label_values(subgraph_handler_execution_time_[[subgraph_hash]]_bucket, handler)",
+            "definition": "label_values(deployment_handler_execution_time_bucket{deployment=\"[[deployment]]\"}, handler)",
             "hide": 0,
             "includeAll": false,
-            "index": -1,
             "label": null,
             "multi": false,
             "name": "handler",
             "options": [],
-            "query": "label_values(subgraph_handler_execution_time_[[subgraph_hash]]_bucket, handler)",
-            "refresh": 1,
+            "query": "label_values(deployment_handler_execution_time_bucket{deployment=\"[[deployment]]\"}, handler)",
+            "refresh": 2,
             "regex": "",
             "skipUrlSync": false,
-            "sort": 0,
+            "sort": 5,
             "tagValuesQuery": "",
             "tags": [],
             "tagsQuery": "",
@@ -2609,23 +2793,23 @@ data:
           {
             "allValue": null,
             "current": {
+              "selected": false,
               "text": "store_get",
               "value": "store_get"
             },
             "datasource": "prometheus",
-            "definition": "label_values(subgraph_host_fn_execution_time_[[subgraph_hash]]_bucket, host_fn_name)",
+            "definition": "label_values(deployment_host_fn_execution_time_bucket{deployment=\"[[deployment]]\"}, host_fn_name)",
             "hide": 0,
             "includeAll": false,
-            "index": -1,
             "label": null,
             "multi": false,
             "name": "host_fn",
             "options": [],
-            "query": "label_values(subgraph_host_fn_execution_time_[[subgraph_hash]]_bucket, host_fn_name)",
+            "query": "label_values(deployment_host_fn_execution_time_bucket{deployment=\"[[deployment]]\"}, host_fn_name)",
             "refresh": 1,
             "regex": "",
             "skipUrlSync": false,
-            "sort": 0,
+            "sort": 5,
             "tagValuesQuery": "",
             "tags": [],
             "tagsQuery": "",
@@ -2635,6 +2819,7 @@ data:
           {
             "allValue": null,
             "current": {
+              "selected": true,
               "text": "All",
               "value": [
                 "$__all"
@@ -2644,7 +2829,6 @@ data:
             "definition": "ethereum_chain_head_number",
             "hide": 2,
             "includeAll": true,
-            "index": -1,
             "label": null,
             "multi": true,
             "name": "network",
@@ -2653,7 +2837,7 @@ data:
             "refresh": 1,
             "regex": "/.*network=\"([^\"]*).*/",
             "skipUrlSync": false,
-            "sort": 0,
+            "sort": 5,
             "tagValuesQuery": "",
             "tags": [],
             "tagsQuery": "",
@@ -2663,12 +2847,11 @@ data:
         ]
       },
       "time": {
-        "from": "now-30m",
+        "from": "now-1h",
         "to": "now"
       },
       "timepicker": {
         "refresh_intervals": [
-          "5s",
           "10s",
           "30s",
           "1m",
@@ -2682,11 +2865,8 @@ data:
       },
       "timezone": "",
       "title": "Subgraph Indexing Metrics",
-      "uid": "e0115cae-staging-production",
-      "variables": {
-        "list": []
-      },
-      "version": 2
+      "uid": "F6JZHNSMk",
+      "version": 31
     }
   postgres.json: |-
     {

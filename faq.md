@@ -99,3 +99,31 @@ Yes, of course. All you have to do is:
 1. Change the registration parameters, e.g. the `--public-indexer-url` or
    `INDEXER_AGENT_PUBLIC_INDEXER_URL` that are passed to the indexer agent.
 2. Restart the indexer agent. It should automatically re-register.
+
+### What happened to my indexing metrics?
+
+This [graph-node pull
+request](https://github.com/graphprotocol/graph-node/pull/1826) changes the
+names of a lot of Prometheus metrics. We used to use the deployment
+identifier `Qm..` in the name of Prometheus metrics, but that was
+undesirable for two reasons:
+
+* for indexers that have a large number of deployments, UI tools become
+  unresponsive because of the resulting large number of metrics
+* it is next to impossible to aggregate such metrics across all deployments
+
+The change in the pull request makes the deployment identifier a label
+`deployment` on all such metrics, and also replaces any mention of the word
+`subgraph` in the metric name with `deployment` to be consistent with the
+general nomenclature in the Graph Protocol ecosystem. Once you deploy a
+`graph-node` version that includes that pull request, the system will no
+longer update metrics with the old names, even for already existing
+subgraph deployments.
+
+The [`grafana`](./grafana) directory contains updated dashboards. Before
+importing them into your existing Grafana installation, it is highly
+recommended that you make a copy of the old dashboard withing Grafana if
+you want to view information about already indexed deployments which use
+the old metric names. The Grafana [kubernetes](./k8s/base/grafana.yaml)
+container has also been updated with dashboards using the new naming
+convention.
