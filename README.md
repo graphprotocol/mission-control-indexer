@@ -280,7 +280,7 @@ You will be expected to complete the following actions:
 
 ### Connect ENS name
 
-1. Navigate to profile dashboard
+1. Navigate to profile dashboard.
 2. Click "edit" icon.
 3. Create ENS Name for Rinkeby (or use existing one)
 4. Enter your top-level ENS name and click "Register"
@@ -289,15 +289,15 @@ You will be expected to complete the following actions:
 
 ### Stake Graph Tokens (GRT)
 
-1. Navigate to your profile dashboard
-2. Click on "Stake" to stake Graph Tokens
+1. Navigate to your profile dashboard.
+2. Click on "Stake" to stake Graph Tokens.
 
 - You should have received Graph Tokens at the address you provided to The Graph team.
 
 ### Signal on a subgraph
 
-1. Navigate to the "Explore" page in Graph Explorer
-2. Find a subgraph to signal on
+1. Navigate to the "Explore" page in Graph Explorer.
+2. Find a subgraph to signal on.
 
 - Reflect on _why_ you might or might want to signal on this subgraph based on the information available to you. We may ask you about this!
 
@@ -307,8 +307,8 @@ You will be expected to complete the following actions:
 
 ### Index a subgraph
 
-1. Navigate to the "Explore" page in Graph Explorer
-2. Find a subgraph to index
+1. Navigate to the "Explore" page in Graph Explorer.
+2. Find a subgraph to index.
 
 - Reflect on _why_ you might or might not want to index this subgraph based on the information available to you. We may ask you about this!
 
@@ -332,10 +332,10 @@ You will be expected to complete the following actions:
 
 1. Navigate to [Uniswap V2 Exchange](https://app.uniswap.org/#/swap?exactField=input&exactAmount=10&inputCurrency=0xa416a7974c2ff62ffa69b2aa8cef78b72326916a&outputCurrency=0xe51aff808f512627166f4eda2c8c682f153024ba) for GRT <> GDAI on Rinkeby.
 2. Connect your wallet.
-3. Swap some GRT for GDAI
+3. Swap some GRT for GDAI.
 
-### Depoist GDAI into GDAI Savings Account
+### Deposit GDAI into GDAI Savings Account
 
 1. Navigate to [https://testnet.thegraph.com/savings/](https://testnet.thegraph.com/savings/)
 1. Connect your MetaMask wallet.
-1. Deposit GDAI into Savings Account
+1. Deposit GDAI into Savings Account.
