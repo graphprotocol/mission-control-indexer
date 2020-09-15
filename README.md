@@ -239,11 +239,13 @@ graph indexer status
 
 Currently this library uses libsecret so you may need to install it before running npm install.
 Depending on your distribution, you will need to run the following command:
+
 ```
 Debian/Ubuntu: sudo apt-get install libsecret-1-dev
 Red Hat-based: sudo yum install libsecret-devel
 Arch Linux: sudo pacman -S libsecret
 ```
+
 2. Send us the output of this command via the form linked above.
 3. Configure your Prometheus so it scrapes metrics from the Indexer Service (note: we'll add metrics for the Indexer Agent in phase 2).
 4. If the Prometheus endpoint has changed since phase 0, submit the
@@ -254,6 +256,7 @@ Arch Linux: sudo pacman -S libsecret
 Now that you have set up your Indexer Agent, Indexer Service and Graph Indexer CLI, your next mission is to perform basic protocol actions, which will leverage these tools as well as some new ones: The Graph Explorer, Uniswap Exchange and the (testnet only) GUSD Savings Rate.
 
 You will be expected to complete the following actions:
+
 - [ ] Login to testnet Graph Explorer
 - [ ] Connect an ENS name
 - [ ] Stake Graph Tokens (GRT)
@@ -265,54 +268,74 @@ You will be expected to complete the following actions:
 - [ ] Deposit GUSD into Savings Rate Account
 
 ### Login to Graph Explorer
+
 1. Navigate to [testnet.thegraph.com](https://testnet.thegraph.com)
 2. Provide login credentials sent to you via email.
- - (These credentials have nothing to do with your account in the app, they are just how we are controlling access to the private beta app).
+
+- (These credentials have nothing to do with your account in the app, they are just how we are controlling access to the private beta app).
+
 3. Connect Metamask wallet.
- - Be sure to use the same Ethereum Account that is currently setup with your Graph Indexer CLI + Indexer Agent.
+
+- Be sure to use the same Ethereum Account that is currently setup with your Graph Indexer CLI + Indexer Agent.
 
 ### Connect ENS name
+
 1. Navigate to profile dashboard
 2. Click "edit" icon.
 3. Create ENS Name for Rinkeby (or use existing one)
 4. Enter your top-level ENS name and click "Register"
- - ENS subdomains are not supported
+
+- ENS subdomains are not supported
 
 ### Stake Graph Tokens (GRT)
+
 1. Navigate to your profile dashboard
 2. Click on "Stake" to stake Graph Tokens
- - You should have received Graph Tokens at the address you provided to The Graph team.
+
+- You should have received Graph Tokens at the address you provided to The Graph team.
 
 ### Signal on a subgraph
+
 1. Navigate to the "Explore" page in Graph Explorer
 2. Find a subgraph to signal on
-  - Reflect on *why* you might or might want to signal on this subgraph based on the information available to you. We may ask you about this!
+
+- Reflect on _why_ you might or might want to signal on this subgraph based on the information available to you. We may ask you about this!
+
 3. Navigate to the "subgraph details" page of the subgraph you chose.
 4. Click "Curate" to to signal on that subgraph.
 5. Complete steps in action panel.
 
 ### Index a subgraph
+
 1. Navigate to the "Explore" page in Graph Explorer
 2. Find a subgraph to index
-  - Reflect on *why* you might or might not want to index this subgraph based on the information available to you. We may ask you about this!
+
+- Reflect on _why_ you might or might not want to index this subgraph based on the information available to you. We may ask you about this!
+
 3. Navigate to the "subgraph details" page of the subgraph you chose.
    - Note the subgraph ID.
 4. Use the Graph Indexer CLI to index the subgraph.
-  - `graph indexer rules set <deployment> decisionBasis always allocationAmount <amount>`
+
+- `graph indexer rules set <deployment> decisionBasis always allocationAmount <amount>`
 
 ### Unsignal and Unstake
+
 1. Unsignal from the same entry point you used to signal.
- - This will require clicking the "Unsignal" tab from the action panel.
+
+- This will require clicking the "Unsignal" tab from the action panel.
+
 2. Unstake some tokens from same entry point as where you staked.
- - This will require clicking the "Unstake" tab in the action panel.
+
+- This will require clicking the "Unstake" tab in the action panel.
 
 ### Sell GRT for GDAI
+
 1. Navigate to [Uniswap V2 Exchange](https://app.uniswap.org/#/swap?exactField=input&exactAmount=10&inputCurrency=0xa416a7974c2ff62ffa69b2aa8cef78b72326916a&outputCurrency=0xe51aff808f512627166f4eda2c8c682f153024ba) for GRT <> GDAI on Rinkeby.
 2. Connect your wallet.
 3. Swap some GRT for GDAI
 
-
 ### Depoist GDAI into GDAI Savings Account
-1. Navigate to [https://testnet.staging.thegraph.com/savings/](https://testnet.staging.thegraph.com/savings/)
+
+1. Navigate to [https://testnet.thegraph.com/savings/](https://testnet.thegraph.com/savings/)
 1. Connect your MetaMask wallet.
 1. Deposit GDAI into Savings Account
