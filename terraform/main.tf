@@ -34,6 +34,10 @@ resource "google_container_cluster" "cluster" {
   remove_default_node_pool = true
   initial_node_count       = 1
 
+  release_channel {
+    channel = var.release_channel
+  }
+
   network = "projects/${var.project}/global/networks/default"
 
   master_auth {
@@ -56,8 +60,10 @@ resource "google_container_node_pool" "default_pool" {
   node_count = var.sizes.default_pool
 
   node_config {
-    preemptible  = false
+    preemptible  = var.preemptible
     machine_type = var.machine_type
+    image_type   = var.image_type
+    disk_size_gb = var.disk_size_gb
 
     metadata = {
       disable-legacy-endpoints = "true"
@@ -71,6 +77,10 @@ resource "google_container_node_pool" "default_pool" {
       "https://www.googleapis.com/auth/service.management.readonly",
       "https://www.googleapis.com/auth/trace.append"
     ]
+
+    shielded_instance_config {
+      enable_secure_boot = var.secure_boot
+    }
   }
 }
 
@@ -80,8 +90,10 @@ resource "google_container_node_pool" "query_pool" {
   node_count = var.sizes.query_pool
 
   node_config {
-    preemptible  = false
+    preemptible  = var.preemptible
     machine_type = var.machine_type
+    image_type   = var.image_type
+    disk_size_gb = var.disk_size_gb
 
     metadata = {
       disable-legacy-endpoints = "true"
@@ -107,6 +119,10 @@ resource "google_container_node_pool" "query_pool" {
       "https://www.googleapis.com/auth/service.management.readonly",
       "https://www.googleapis.com/auth/trace.append"
     ]
+
+    shielded_instance_config {
+      enable_secure_boot = var.secure_boot
+    }
   }
 }
 
@@ -116,8 +132,10 @@ resource "google_container_node_pool" "index_pool" {
   node_count = var.sizes.index_pool
 
   node_config {
-    preemptible  = false
+    preemptible  = var.preemptible
     machine_type = var.machine_type
+    image_type   = var.image_type
+    disk_size_gb = var.disk_size_gb
 
     metadata = {
       disable-legacy-endpoints = "true"
@@ -143,6 +161,10 @@ resource "google_container_node_pool" "index_pool" {
       "https://www.googleapis.com/auth/service.management.readonly",
       "https://www.googleapis.com/auth/trace.append"
     ]
+
+    shielded_instance_config {
+      enable_secure_boot = var.secure_boot
+    }
   }
 }
 

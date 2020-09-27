@@ -41,6 +41,34 @@ variable "machine_type" {
   description = "The type of machine to use for kubernetes nodes"
 }
 
+variable "image_type" {
+  type = string
+  default = "COS"
+  description = "The image type to use for kubernetes nodes"
+}
+
+variable "disk_size_gb" {
+  type = number
+  default = 100
+  description = "The size of the boot disk on each kubernetes node, specified in GB"
+}
+
+variable "preemptible" {
+  default = false
+  description = "Whether to use preemptible machines for kubernetes nodes"
+}
+
+variable "secure_boot" {
+  default = false
+  description = "Whether to enable secure boot for kubernetes nodes"
+}
+
+variable "release_channel" {
+  type = string
+  default = "UNSPECIFIED"
+  description = "The release channel of the Kubernetes cluster"
+}
+
 # Possible values are listed at
 # https://cloud.google.com/sql/docs/postgres/create-instance
 variable "database_tier" {
