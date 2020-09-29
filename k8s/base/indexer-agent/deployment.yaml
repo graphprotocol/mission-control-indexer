@@ -46,7 +46,7 @@ spec:
             - name: INDEXER_AGENT_PUBLIC_INDEXER_URL
               value: http://indexer.domain/
             - name: INDEXER_AGENT_INDEXER_GEO_COORDINATES
-              value: "37.630768,-119.032631"
+              value: "37.630768 -119.032631"
             - name: INDEXER_AGENT_NETWORK_SUBGRAPH_ENDPOINT
               value: https://api.thegraph.com/subgraphs/name/graphprotocol/graph-network-testnet-phase2
             - name: INDEXER_AGENT_POSTGRES_HOST
