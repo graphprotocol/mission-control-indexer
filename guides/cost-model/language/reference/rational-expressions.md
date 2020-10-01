@@ -33,7 +33,7 @@ The following binary operators are supported and are applied order:
 * `+` Add
 * `-` Sub
 
-All math is lossless during the execution of an expression, but is rounded toward zero and clamped between 0 (inclusive) and 2²⁵⁶ (exclusive) when outputting the final cost.
+All math is lossless during the execution of an expression, but is rounded toward zero and clamped between 0 (inclusive) and 2^256 (exclusive) when outputting the final cost.
 
 A divide-by-zero will cause the expression to fail and not output a cost.
 

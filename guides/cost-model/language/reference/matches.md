@@ -19,7 +19,7 @@ default
 
 ## Query Match
 
-A _QueryMatch_ is specified by an `OperationDefinition` of type `query` as defined in the [GraphQL Spec](https://spec.graphql.org/June2018/#sec-Language.Operations)
+A _QueryMatch_ is specified by the tag `query` followed a `Query shorthand` as defined in the [GraphQL Spec](https://spec.graphql.org/June2018/#sec-Language.Operations)
 
 ```
 query { tokens }
