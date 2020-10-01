@@ -12,7 +12,6 @@ query { tokens(first: $first) } when $first > 1000 => $SURCHARGE;
 
 **See Also**
 * [Table of Contents](./toc.md)
-* [Table of Contents](./toc.md)
 * [Predicates](./predicates.md)
 * [Boolean Expressions](./boolean-expressions.md)
 * [Substitutions](./substitutions.md)
