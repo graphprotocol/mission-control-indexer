@@ -136,6 +136,8 @@ with `INDEXER_SERVICE`. These are:
 - `SERVER_DB_USER`, and
 - `SERVER_DB_PASSWORD`.
 
+**Of note - you shall create new postgres database for indexer service, the postgresdb created for graph-node cannot be re-used, and then pass the parameters to the graph-indexer agent, eg create graph-indexerdb by logging to postgres, keep in mind the username and password**
+
 The Indexer Agent and Service may be installed differently depending on your
 preference and existing infrastructure. See instructions for installing via
 NPM, Docker, or directly from source below.
@@ -157,7 +159,7 @@ NPM, Docker, or directly from source below.
       --indexer-geo-coordinates <indexer-lat-long-coordinates. Eg: 37.630768 -119.032631> \
       --postgres-host <postgres-host> \
       --postgres-port 5432 \
-      --postgres-database <indexer-service-database>
+      --postgres-database <indexer-service-database> \
       --postgres-username <postgres-username> \
       --postgres-password <postgres-password> \
       --index-node-ids default \
