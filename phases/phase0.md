@@ -1,4 +1,4 @@
-## Phase 0: Run an Indexer
+# Phase 0: Run an Indexer
 
 In this phase indexers are asked to set up basic indexer infrastructure. This
 infrastructure will then be extended upon in phase 1. The infrastructure
@@ -10,7 +10,7 @@ required for phase 0 includes:
 
 ![Phase 0 Architecture](../files/phase0-architecture.png)
 
-### The Mission
+## The Mission
 
 The mission is to set up the above infrastructure and index a specific set of
 subgraphs. The following documentation is provided to help with this mission:
@@ -38,7 +38,7 @@ Configuration hints:
 - The following IPFS node is to be used when setting up Graph Node:
   https://testnet.thegraph.com/ipfs/
 
-### Successful Completion
+## Successful Completion
 
 The following criteria must be met in order to successfully complete this
 phase or mission:
@@ -66,11 +66,11 @@ phase or mission:
    Deployment: Qme2hDXrkBpuXAYEuwGPAjr6zwiMZV4FHLLBa3BHzatBWx
    Explorer:   https://thegraph.com/explorer/subgraph/synthetixio-team/synthetix
    ```
-   
+
    Another subgraph that you _can_ deploy but don't have to (no bonus points),
    is listed below. It requires only a _full_ node and can be a good way to test
    your initial graph-node setup.
-   
+
    ```
    Subgraph:   Gravity
    Deployment: QmbeDC4G8iPAUJ6tRBu99vwyYkaSiFwtXWKwwYkoNphV4X
@@ -84,6 +84,6 @@ phase or mission:
 At the end of the phase, the Graph team will verify the above criteria for
 all indexers participating in the testnet.
 
-### Phase 0 Test Harness
+## Phase 0 Test Harness
 
 You can find this in [testing/phase0](../testing/phase0/).
