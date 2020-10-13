@@ -68,6 +68,8 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
   sum of main threads and worker threads does not exceed the CPU threads
   or vCPUs.
 
+* There is a new network subgraph version. Make sure to update the `--network-subgraph-endpoint` or `INDEXER_AGENT_NETWORK_SUBGRAPH_ENDPOINT` / `INDEXER_SERVICE_NETWORK_SUBGRAPH_ENDPOINT` values to `https://api.thegraph.com/subgraphs/name/graphprotocol/graph-network-testnet-phase2`.
+
 ## Contract Addresses
 
 * [GRT](https://rinkeby.etherscan.io/address/0x380336f7d6be0bb0d345b1633d4d14b32d95530f): `0x380336f7d6be0bb0d345b1633d4d14b32d95530f`
