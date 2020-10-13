@@ -68,6 +68,11 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
   sum of main threads and worker threads does not exceed the CPU threads
   or vCPUs.
 
+## Contract Addresses
+
+* [GRT](https://rinkeby.etherscan.io/address/0x380336f7d6be0bb0d345b1633d4d14b32d95530f): `0x380336f7d6be0bb0d345b1633d4d14b32d95530f`
+* [GDAI](https://rinkeby.etherscan.io/address/0xe51aff808f512627166f4eda2c8c682f153024ba): `0xe51aff808f512627166f4eda2c8c682f153024ba`
+
 ## Indexer Agent
 
 - [Source code](https://github.com/graphprotocol/indexer/)
