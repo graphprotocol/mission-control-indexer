@@ -8,6 +8,13 @@ spec:
       containers:
         - name: indexer-service
           env:
+            # Set this to the indexer address that you are operating for
+            - name: INDEXER_SERVICE_INDEXER_ADDRESS
+              value: "0x..."
             # Set this to your Ethereum node/provider
             - name: INDEXER_SERVICE_ETHEREUM
               value: https://rinkeby.alchemyapi.io/jsonrpc/demo/
+            # Set this to the number of worker threads to use for the state
+            # channel wallet
+            - name: AMOUNT_OF_WORKER_THREADS
+              value: "2"

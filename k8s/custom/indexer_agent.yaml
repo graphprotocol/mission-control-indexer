@@ -14,6 +14,9 @@ spec:
             # Set this to your Ethereum node/provider
             - name: INDEXER_AGENT_ETHEREUM
               value: https://rinkeby.alchemyapi.io/jsonrpc/demo/
+            # Set this to the indexer address that you are operating for
+            - name: INDEXER_AGENT_INDEXER_ADDRESS
+              value: "0x..."
             # Set this to the public URL that your indexer serves from
             - name: INDEXER_AGENT_PUBLIC_INDEXER_URL
               value: http://localhost/
