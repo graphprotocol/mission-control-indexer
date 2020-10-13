@@ -71,7 +71,8 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 ## Contract Addresses
 
 * [GRT](https://rinkeby.etherscan.io/address/0x380336f7d6be0bb0d345b1633d4d14b32d95530f): `0x380336f7d6be0bb0d345b1633d4d14b32d95530f`
-* [GDAI](https://rinkeby.etherscan.io/address/0xe51aff808f512627166f4eda2c8c682f153024ba): `0xe51aff808f512627166f4eda2c8c682f153024ba`
+* [GDAI](https://rinkeby.etherscan.io/address/0xA696F745f16ACc9839A290227bD7DbA925Ca7155): `0xA696F745f16ACc9839A290227bD7DbA925Ca7155`
+* [Uniswap Pair](https://rinkeby.etherscan.io/address/0x59a9aa6e4db845262ce6638969dc27caa59cd8ba): `0x59a9aa6e4db845262ce6638969dc27caa59cd8ba`
 
 ## Indexer Agent
 
