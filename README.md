@@ -37,17 +37,26 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
   reference, this feature was added to Ethereum via
   [EIP-1989](https://eips.ethereum.org/EIPS/eip-1898).
 
-- Indexers now run as "operators" of indexers. This means that, in addition to
-  `--mnemonic` or `INDEXER_AGENT_MNEMONIC` / `INDEXER_SERVICE_MNEMONIC`, an
-  `--indexer-address` or `INDEXER_AGENT_INDEXER_ADDRESS` /
-  `INDEXER_SERVICE_INDEXER_ADDRESS` value needs to be passed to Indexer Agent
-  and Service, with the Ethereum address of the indexer.
+- The Indexer Agent no longer automatically stakes on your behalf. This is
+  because we've split up the indexer into two roles: indexer and operator.
 
   This feature allows indexers to decouple their root keys from lower-risk
   operator keys that have limited capabilities. Only the indexer root key can
   stake (via the UI). Multiple operators can be defined, but only one can
   register a URL for the indexer at a time. Indexer and operator _can_ use
   the same Ethereum address and key.
+
+  In order to set things up correctly, indexers need to:
+  
+  1. stake using the UI (Indexer Agent will automatically allocate using this stake),
+  2. (if you want to use different indexer and operator keys) set one or more operators.
+
+- Indexer components now run as "operators" of indexers. This means that, in
+  addition to `--mnemonic` or `INDEXER_AGENT_MNEMONIC` /
+  `INDEXER_SERVICE_MNEMONIC`, an `--indexer-address` or
+  `INDEXER_AGENT_INDEXER_ADDRESS` / `INDEXER_SERVICE_INDEXER_ADDRESS` value
+  needs to be passed to Indexer Agent and Service, with the Ethereum address of
+  the indexer.
 
 - Cost management and a `/cost` API have been added to the Indexer Service for
   price definition and discovery. It's a market now!
