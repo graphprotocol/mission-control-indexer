@@ -30,6 +30,11 @@ Note: No new components were added aside from internal dependencies.
 
 For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
+## Important Updates
+
+- **2020-10-15: [Indexer 0.3.1 release to restart phase 2](./updates/2020-10-15-indexer-release-to-restart-phase2.md) — updates
+  indexer components to new contracts so that we can cleanly restart phase 2, as announced earlier this week.**
+
 ## Main Changes
 
 - Graph Node now makes contracts calls by block hash instead of block number.
@@ -81,17 +86,17 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 ## Contract Addresses
 
-* [GRT](https://rinkeby.etherscan.io/address/0x380336f7d6be0bb0d345b1633d4d14b32d95530f): `0x380336f7d6be0bb0d345b1633d4d14b32d95530f`
-* [GDAI](https://rinkeby.etherscan.io/address/0xA696F745f16ACc9839A290227bD7DbA925Ca7155): `0xA696F745f16ACc9839A290227bD7DbA925Ca7155`
-* [Uniswap Pair](https://rinkeby.etherscan.io/address/0x59a9aa6e4db845262ce6638969dc27caa59cd8ba): `0x59a9aa6e4db845262ce6638969dc27caa59cd8ba`
+* [GRT](https://rinkeby.etherscan.io/address/0x496eec523c74c4BbF071e0c75573c9deb07929f4): `0x496eec523c74c4BbF071e0c75573c9deb07929f4`
+* [GDAI](https://rinkeby.etherscan.io/address/0xFb49BDaA59d4B7aE6260D22b7D86e6Fe94031b82): `0xFb49BDaA59d4B7aE6260D22b7D86e6Fe94031b82`
+* [Uniswap Pair](https://rinkeby.etherscan.io/address/0x9228373a1d330d502ed05c013b5989a71e1f5f8e): `0x9228373a1d330d502ed05c013b5989a71e1f5f8e`
 
 ## Indexer Agent
 
 - [Source code](https://github.com/graphprotocol/indexer/)
 - [NPM
-  package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent/v/0.3.0)
-  (release: `@graphprotocol/indexer-agent@0.3.0`)
-- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent) (tag: `sha-4e0527e`)
+  package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent/v/0.3.1)
+  (release: `@graphprotocol/indexer-agent@0.3.1`)
+- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent) (tag: `sha-c16642a`)
 - [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-agent/CHANGELOG.md#030---2020-10-13)
 
 Notable changes that require changes in the indexer-agent configuration:
@@ -101,22 +106,23 @@ Notable changes that require changes in the indexer-agent configuration:
 ## Indexer Service
 
 - [Source code](https://github.com/graphprotocol/indexer/)
-- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service/v/0.3.0)
-  (release: `@graphprotocol/indexer-service@0.3.0`)
-- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service) (tag: `sha-4e0527e`)
+- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service/v/0.3.1)
+  (release: `@graphprotocol/indexer-service@0.3.1`)
+- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service) (tag: `sha-c16642a`)
 - [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-service/CHANGELOG.md#030---2020-10-13)
 
 ## Indexer CLI
 
 - [Source code](https://github.com/graphprotocol/indexer/)
-- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-cli/v/0.3.0)
-  (release: `@graphprotocol/indexer-cli@0.3.0`)
+- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-cli/v/0.3.1)
+  (release: `@graphprotocol/indexer-cli@0.3.1`)
 - [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-cli/CHANGELOG.md#030---2020-10-13)
 
 ## Graph Node
 
 - [Source code](https://github.com/graphprotocol/graph-node/)
 - [Release
-  tag](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.0) (`v0.19.0`)
-- [Docker image](https://hub.docker.com/layers/graphprotocol/graph-node/) (tag: `v0.19.0`)
-- [Changes since 0.18.0](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.0)
+  tag](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.1) (`v0.19.1`)
+- [Docker image](https://hub.docker.com/layers/graphprotocol/graph-node/) (tag: `v0.19.1`)
+- [Changes between 0.18.0 and 0.19.0](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.0)
+- [Changes between 0.19.0 and 0.19.1](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.1)
