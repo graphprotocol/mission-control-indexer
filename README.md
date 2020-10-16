@@ -34,6 +34,8 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 - **2020-10-15: [Indexer 0.3.1 release to restart phase 2](./updates/2020-10-15-indexer-release-to-restart-phase2.md) — updates
   indexer components to new contracts so that we can cleanly restart phase 2, as announced earlier this week.**
+- **2020-10-15: [GDAI to GRT Converter tool](https://github.com/graphprotocol/mission-control-indexer/tree/master/utils/gdai-to-grt) — provides 
+  a conversion between GDAI and GRT to allow you to express cost model rules in GDAI.**  
 
 ## Main Changes
 
