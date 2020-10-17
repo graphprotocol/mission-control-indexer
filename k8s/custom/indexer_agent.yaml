@@ -22,4 +22,4 @@ spec:
               value: http://localhost/
             # Set this to the coordinates of your server
             - name: INDEXER_AGENT_INDEXER_GEO_COORDINATES
-              value: "37.630768,-119.032631"
+              value: "37.630768 -119.032631"
