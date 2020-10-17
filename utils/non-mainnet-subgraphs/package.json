@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@graphprotocol/common-ts": "^0.3.3",
+    "axios": "^0.20.0",
+    "graphql-tag": "^2.11.0",
+    "p-filter": "^2.1.0"
+  },
+  "name": "non-mainnet-subgraphs",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "non-mainnet-subgraphs": "./non-mainnet-subgraphs.ts",
+    "ignore-non-mainnet-subgraphs": "./ignore-non-mainnet-subgraphs.sh"
+  }
+}
