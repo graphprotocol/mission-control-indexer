@@ -103,7 +103,7 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 Notable changes that require changes in the indexer-agent configuration:
 
-- The `INDEXER_AGENT_INDEXER_GEO_COORDINATES` environment variable is now comma-separated.
+- The `INDEXER_AGENT_INDEXER_GEO_COORDINATES` environment variable is now space-separated (`"<lat> <long>`).
 
 ## Indexer Service
 
