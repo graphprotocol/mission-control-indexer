@@ -37,7 +37,7 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 - **2020-10-16: [GDAI to GRT conversation utility for cost models](./utils/gdai-to-grt/).**
 
-- **2020-10-20: [Graph Node v0.19.0 release allows to disable EIP-1898](./updates/2020-10-20-graph-node-v0.19.2.md)
+- **2020-10-20: [Graph Node v0.19.0 release allows to disable EIP-1898](./updates/2020-10-20-graph-node-v0.19.2.md)**
 
 ## Main Changes
 
@@ -56,7 +56,7 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
   the same Ethereum address and key.
 
   In order to set things up correctly, indexers need to:
-  
+
   1. stake using the UI (Indexer Agent will automatically allocate using this stake),
   2. (if you want to use different indexer and operator keys) set one or more operators.
 
@@ -90,9 +90,9 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 ## Contract Addresses
 
-* [GRT](https://rinkeby.etherscan.io/address/0x496eec523c74c4BbF071e0c75573c9deb07929f4): `0x496eec523c74c4BbF071e0c75573c9deb07929f4`
-* [GDAI](https://rinkeby.etherscan.io/address/0xFb49BDaA59d4B7aE6260D22b7D86e6Fe94031b82): `0xFb49BDaA59d4B7aE6260D22b7D86e6Fe94031b82`
-* [Uniswap Pair](https://rinkeby.etherscan.io/address/0x9228373a1d330d502ed05c013b5989a71e1f5f8e): `0x9228373a1d330d502ed05c013b5989a71e1f5f8e`
+- [GRT](https://rinkeby.etherscan.io/address/0x496eec523c74c4BbF071e0c75573c9deb07929f4): `0x496eec523c74c4BbF071e0c75573c9deb07929f4`
+- [GDAI](https://rinkeby.etherscan.io/address/0xFb49BDaA59d4B7aE6260D22b7D86e6Fe94031b82): `0xFb49BDaA59d4B7aE6260D22b7D86e6Fe94031b82`
+- [Uniswap Pair](https://rinkeby.etherscan.io/address/0x9228373a1d330d502ed05c013b5989a71e1f5f8e): `0x9228373a1d330d502ed05c013b5989a71e1f5f8e`
 
 ## Indexer Agent
 
