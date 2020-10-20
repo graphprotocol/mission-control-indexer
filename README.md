@@ -37,6 +37,8 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 - **2020-10-16: [GDAI to GRT conversation utility for cost models](./utils/gdai-to-grt/).**
 
+- **2020-10-20: [Graph Node v0.19.0 release allows to disable EIP-1898](./updates/2020-10-20-graph-node-v0.19.2.md)
+
 ## Main Changes
 
 - Graph Node now makes contracts calls by block hash instead of block number.
