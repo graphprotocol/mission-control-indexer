@@ -1,0 +1,15 @@
+{
+  "name": "subgraph-deployment-id-conversions",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "convert": "./display-all-encodings.ts"
+  },
+  "dependencies": {
+    "@graphprotocol/common-ts": "^0.3.3"
+  },
+  "devDependencies": {
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  }
+}
