@@ -3,8 +3,9 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import * as yargs from 'yargs'
-import { ethers, providers } from 'ethers'
-import { parseGRT } from '@graphprotocol/common-ts'
+import {BigNumber, ethers, providers, utils } from 'ethers'
+import { parseGRT, formatGRT } from '@graphprotocol/common-ts'
+import {formatUnits, parseUnits, formatEther} from "ethers/lib/utils";
 
 const UNISWAP_PAIR_ADDRESS = '0x9228373a1d330d502ed05c013b5989a71e1f5f8e'
 const UNISWAP_PAIR_ABI = JSON.parse(
@@ -34,14 +35,17 @@ async function main() {
     provider
   )
   const reserves = await contract.getReserves()
-  const gdai2grtwei = parseGRT(
-    reserves._reserve0.div(reserves._reserve1).toString()
-  )
+  const gdai2grt = reserves._reserve0.div(reserves._reserve1)
+  const gdai2grtwei = parseUnits(gdai2grt.toString(), 18)
+  const gdai2grtdecimal = formatUnits(gdai2grt,0)
 
   if (argv['agora']) {
-    console.log(JSON.stringify({ GDAI: `${gdai2grtwei}` }))
+    console.log(JSON.stringify({
+      "GDAI": `${gdai2grtdecimal}`,
+    }))
   } else {
-    console.log(gdai2grtwei.toString())
+    console.log("GRT/GDAI:", gdai2grtdecimal.toString())
+    console.log("GRT/GDAI (gwei):", gdai2grtwei.toString())
   }
 }
 
