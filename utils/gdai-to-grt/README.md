@@ -31,5 +31,5 @@ following rule prices all queries as 2 GDAI (expressed as GRT wei) if there
 is a variable called `$GDAI`:
 
 ```
-default => 2 * $GDAI
+default => 0.0002 * $GDAI
 ```
