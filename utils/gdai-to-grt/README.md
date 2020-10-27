@@ -10,26 +10,28 @@ yarn
 
 ```sh
 $ ./gdai-to-grt.ts
-10000000000000000000
+GRT/GDAI: 10.0
+GRT/GDAI (wei): 10000000000000000000
 
 $ ../gdai-to-grt.ts --agora
-{"GDAI":"10000000000000000000"}
+{"GDAI":"10.0"}
 ```
 or
 ```
-$ yarn gdai-to-grt-wei
-10000000000000000000
+$ yarn gdai-to-grt
+GRT/GDAI: 10.0
+GRT/GDAI (wei): 10000000000000000000
 
 $ yarn agora
-{"GDAI":"10000000000000000000"}
+{"GDAI":"10.0"}
 ```
 
 ## Why?
 
 This allows you to express cost model rules in GDAI. For instance, the
-following rule prices all queries as 2 GDAI (expressed as GRT wei) if there
+following rule prices all queries as 2 GDAI (expressed as GRT) if there
 is a variable called `$GDAI`:
 
 ```
-default => 0.0002 * $GDAI
+default => 2 * $GDAI
 ```

@@ -41,6 +41,10 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 - **2020-10-21: [Subgraph Deployment ID conversion utility](./utils/subgraph-deployment-id-conversions).**
 
+- **2020-10-27: [Updated Agora tool to use decimal GRT rather then wei](https://github.com/graphprotocol/agora).**
+
+- **2020-10-27: [Updated GDAI to GRT conversation utility to output conversion rate in decimal format](./utils/gdai-to-grt).**
+
 ## Main Changes
 
 - Graph Node now makes contracts calls by block hash instead of block number.
@@ -132,3 +136,8 @@ Notable changes that require changes in the indexer-agent configuration:
 - [Docker image](https://hub.docker.com/layers/graphprotocol/graph-node/) (tag: `v0.19.1`)
 - [Changes between 0.18.0 and 0.19.0](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.0)
 - [Changes between 0.19.0 and 0.19.1](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.1)
+
+## Agora 
+
+- [Source code](https://github.com/graphprotocol/agora)
+- [Guide](./guides/agora/language)
