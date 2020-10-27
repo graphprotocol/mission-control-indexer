@@ -28,9 +28,9 @@ $ yarn agora
 
 ## Why?
 
-This allows you to express cost model rules in GDAI. For instance, the
-following rule prices all queries as 2 GDAI (expressed as GRT) if there
-is a variable called `$GDAI`:
+This allows you to convert easily from GDAI to GRT in your cost models. 
+For instance, the following rule prices all queries as 2 GDAI if there were a 
+variable called `$GDAI`:
 
 ```
 default => 2 * $GDAI

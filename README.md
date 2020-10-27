@@ -43,7 +43,7 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 - **2020-10-27: [Updated Agora tool to use decimal GRT rather then wei](https://github.com/graphprotocol/agora).**
 
-- **2020-10-27: [Updated GDAI to GRT conversation utility to output conversion rate in decimal format](./utils/gdai-to-grt).**
+- **2020-10-27: [Updated GDAI to GRT conversion utility to output conversion rate in decimal format](./utils/gdai-to-grt).**
 
 ## Main Changes
 
@@ -141,3 +141,4 @@ Notable changes that require changes in the indexer-agent configuration:
 
 - [Source code](https://github.com/graphprotocol/agora)
 - [Guide](./guides/agora/language)
+- [Workshop](https://www.youtube.com/watch?v=F88iqiCxj-s)
