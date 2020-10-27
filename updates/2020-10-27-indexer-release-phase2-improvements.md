@@ -8,6 +8,12 @@ The following new versions are part of this release:
 - @graphprotocol/indexer-agent: 0.3.2 (Docker image: `graphprotocol/indexer-agent:sha-960b586`)
 - @graphprotocol/indexer-service: 0.3.2 (Docker image: `graphprotocol/indexer-service:sha-960b586`)
 
+Important usage updates: 
+- The indexer agent now exposes a metrics port (default: `7300`) that can be changed 
+with `INDEXER_AGENT_METRICS_PORT`/`--metrics-port`.
+- When started with `--inject-grt-per-dai-conversion-variable` or `INDEXER_AGENT_INJECT_GRT_PER_DAI_CONVERSION_VARIABLE`, the indexer 
+agent automatically injects a `$DAI` variable to allow expressing cost models in GDAI by multiplying with `$DAI`. 
+
 ### Changelog
 
 #### Indexer Agent
