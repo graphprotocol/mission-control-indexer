@@ -45,6 +45,8 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 - **2020-10-27: [Updated GDAI to GRT conversion utility to output conversion rate in decimal format](./utils/gdai-to-grt).**
 
+- **2020-10-27: [Indexer 0.3.2 release](./updates/2020-10-27-indexer-phase2-improvements.md).**
+
 ## Main Changes
 
 - Graph Node now makes contracts calls by block hash instead of block number.
@@ -104,9 +106,9 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 - [Source code](https://github.com/graphprotocol/indexer/)
 - [NPM
-  package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent/v/0.3.1)
-  (release: `@graphprotocol/indexer-agent@0.3.1`)
-- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent) (tag: `sha-c16642a`)
+  package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent/v/0.3.2)
+  (release: `@graphprotocol/indexer-agent@0.3.2`)
+- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent) (tag: `sha-960b586`)
 - [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-agent/CHANGELOG.md#030---2020-10-13)
 
 Notable changes that require changes in the indexer-agent configuration:
@@ -116,16 +118,16 @@ Notable changes that require changes in the indexer-agent configuration:
 ## Indexer Service
 
 - [Source code](https://github.com/graphprotocol/indexer/)
-- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service/v/0.3.1)
-  (release: `@graphprotocol/indexer-service@0.3.1`)
-- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service) (tag: `sha-c16642a`)
+- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service/v/0.3.2)
+  (release: `@graphprotocol/indexer-service@0.3.2`)
+- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service) (tag: `sha-960b586`)
 - [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-service/CHANGELOG.md#030---2020-10-13)
 
 ## Indexer CLI
 
 - [Source code](https://github.com/graphprotocol/indexer/)
-- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-cli/v/0.3.1)
-  (release: `@graphprotocol/indexer-cli@0.3.1`)
+- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-cli/v/0.3.2)
+  (release: `@graphprotocol/indexer-cli@0.3.2`)
 - [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-cli/CHANGELOG.md#030---2020-10-13)
 
 ## Graph Node
