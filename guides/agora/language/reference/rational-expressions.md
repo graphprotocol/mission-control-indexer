@@ -10,7 +10,7 @@ Syntactically, it may any of the following forms:
 
 ```
 # A const Rational Expression
-18446744073709551616
+10.00198
 
 # A Substitution Rational Expression
 $sub
@@ -22,7 +22,7 @@ $sub
 2 + 4
 
 # A Rational expression using all of the above
-500 + ($skip + 10) * $ENTITY_COST
+500.0 + ($skip + 10) * $ENTITY_COST
 ```
 
 ## Binary Operators in Rational Expressions
@@ -33,7 +33,7 @@ The following binary operators are supported and are applied order:
 * `+` Add
 * `-` Sub
 
-All math is lossless during the execution of an expression, but is rounded toward zero and clamped between 0 (inclusive) and 2^256 (exclusive) when outputting the final cost.
+All math is lossless during the execution of an expression, but is rounded toward zero and clamped between 0 (inclusive) and 2^256 (exclusive) GRT expressed in wei when outputting the final cost.
 
 A divide-by-zero will cause the expression to fail and not output a cost.
 

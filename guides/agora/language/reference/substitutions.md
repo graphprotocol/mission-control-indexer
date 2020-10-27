@@ -52,9 +52,11 @@ The following coercions are supported:
     true => 1
     false => 0
     null => 0
-    string => parseInt(string)
+    string => parseDecimal(string)
 
 If the coercion fails, the pricing will return an error and the query will not be costed.
+
+Note that because of limitations of JSON, large numbers and numbers with decimals must be passed in as strings.
 
 # See also
 * [Table of Contents](./toc.md)
