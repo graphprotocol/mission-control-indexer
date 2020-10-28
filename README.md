@@ -45,7 +45,7 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 - **2020-10-27: [Updated GDAI to GRT conversion utility to output conversion rate in decimal format](./utils/gdai-to-grt).**
 
-- **2020-10-27: [Indexer 0.3.2 release](./updates/2020-10-27-indexer-phase2-improvements.md).**
+- **2020-10-27: [Indexer 0.3.2 release](./updates/2020-10-27-indexer-release-phase2-improvements.md).**
 
 ## Main Changes
 
