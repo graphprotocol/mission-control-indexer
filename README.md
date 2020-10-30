@@ -49,6 +49,8 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 - **2020-10-28: [Indexer 0.3.3 release](./updates/2020-10-28-indexer-release-v0.3.3.md).**
 
+- **2020-10-30: [Indexer 0.3.5 release](./updates/2020-10-30-indexer-release-v0.3.5.md).**
+
 ## Main Changes
 
 - Graph Node now makes contracts calls by block hash instead of block number.
@@ -108,9 +110,9 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 - [Source code](https://github.com/graphprotocol/indexer/)
 - [NPM
-  package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent/v/0.3.3)
-  (release: `@graphprotocol/indexer-agent@0.3.3`)
-- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent) (tag: `sha-be91ac4`)
+  package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent/v/0.3.5)
+  (release: `@graphprotocol/indexer-agent@0.3.5`)
+- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent) (tag: `sha-1e21cc6`)
 - [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-agent/CHANGELOG.md#030---2020-10-13)
 
 Notable changes that require changes in the indexer-agent configuration:
@@ -120,28 +122,29 @@ Notable changes that require changes in the indexer-agent configuration:
 ## Indexer Service
 
 - [Source code](https://github.com/graphprotocol/indexer/)
-- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service/v/0.3.3)
-  (release: `@graphprotocol/indexer-service@0.3.3`)
-- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service) (tag: `sha-be91ac4`)
+- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service/v/0.3.5)
+  (release: `@graphprotocol/indexer-service@0.3.5`)
+- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service) (tag: `sha-1e21cc6`)
 - [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-service/CHANGELOG.md#030---2020-10-13)
 
 ## Indexer CLI
 
 - [Source code](https://github.com/graphprotocol/indexer/)
-- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-cli/v/0.3.3)
-  (release: `@graphprotocol/indexer-cli@0.3.3`)
+- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-cli/v/0.3.5)
+  (release: `@graphprotocol/indexer-cli@0.3.5`)
 - [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-cli/CHANGELOG.md#030---2020-10-13)
 
 ## Graph Node
 
 - [Source code](https://github.com/graphprotocol/graph-node/)
 - [Release
-  tag](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.1) (`v0.19.1`)
-- [Docker image](https://hub.docker.com/layers/graphprotocol/graph-node/) (tag: `v0.19.1`)
+  tag](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.2) (`v0.19.2`)
+- [Docker image](https://hub.docker.com/layers/graphprotocol/graph-node/) (tag: `v0.19.2`)
 - [Changes between 0.18.0 and 0.19.0](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.0)
 - [Changes between 0.19.0 and 0.19.1](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.1)
+- [Changes between 0.19.1 and 0.19.2](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.2)
 
-## Agora 
+## Agora
 
 - [Source code](https://github.com/graphprotocol/agora)
 - [Guide](./guides/agora/language)
