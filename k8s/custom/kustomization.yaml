@@ -5,16 +5,16 @@ bases:
 images:
   - name: graph-node-image
     newName: graphprotocol/graph-node
-    newTag: v0.19.1
+    newTag: v0.19.2
   - name: graph-node-debug
     newName: graphprotocol/graph-node-debug
-    newTag: v0.19.1
+    newTag: v0.19.2
   - name: indexer-agent-image
     newName: graphprotocol/indexer-agent
-    newTag: sha-be91ac4
+    newTag: sha-1e21cc6
   - name: indexer-service-image
     newName: graphprotocol/indexer-service
-    newTag: sha-be91ac4
+    newTag: sha-1e21cc6
   - name: prometheus-image
     newName: prom/prometheus
     newTag: v2.17.1
