@@ -1,4 +1,4 @@
-# 2020-10-30 Indexer 0.3.5 Release with Depenendency Fixes
+# 2020-10-30 Indexer 0.3.5 Release with Dependency Fixes
 
 ## What's in this release?
 
