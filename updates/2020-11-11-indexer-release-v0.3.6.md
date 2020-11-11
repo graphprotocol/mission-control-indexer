@@ -13,6 +13,7 @@ The following new versions are part of this release:
 ### Indexer Agent
 
 - **Fix only collecting indexing rewards when forcibly closing allocations.**
+  - Indexing rewards were not collected when closing allocations automatically.
 - Fix caching of subgraph indexing statuses.
 - Update network subgraph deployment.
 - Document (in help text) that `--index-node-ids` is comma-separated.
