@@ -108,9 +108,9 @@ names of a lot of Prometheus metrics. We used to use the deployment
 identifier `Qm..` in the name of Prometheus metrics, but that was
 undesirable for two reasons:
 
-* for indexers that have a large number of deployments, UI tools become
+- for indexers that have a large number of deployments, UI tools become
   unresponsive because of the resulting large number of metrics
-* it is next to impossible to aggregate such metrics across all deployments
+- it is next to impossible to aggregate such metrics across all deployments
 
 The change in the pull request makes the deployment identifier a label
 `deployment` on all such metrics, and also replaces any mention of the word
@@ -127,3 +127,83 @@ you want to view information about already indexed deployments which use
 the old metric names. The Grafana [kubernetes](./k8s/base/grafana.yaml)
 container has also been updated with dashboards using the new naming
 convention.
+
+## Phase 2
+
+### What IP addresses is the query traffic coming from?
+
+This is the list. If you have a firewall set up, make sure to allow these IP
+addresses to send requests to your indexer service.
+
+```
+35.247.236.236
+34.95.191.237
+35.198.62.223
+35.198.38.97
+35.199.76.174
+34.95.189.37
+35.199.106.49
+34.87.223.32
+35.201.30.225
+35.197.165.223
+35.244.123.62
+35.201.27.80
+35.201.23.133
+35.189.13.40
+35.246.241.146
+35.198.180.221
+35.246.140.28
+34.89.192.36
+34.89.135.245
+35.246.171.70
+34.107.25.111
+35.228.53.98
+35.228.254.44
+35.228.8.135
+35.228.174.24
+35.228.111.115
+35.228.148.146
+35.228.235.187
+35.221.25.192
+35.194.79.231
+35.245.100.101
+35.188.231.6
+35.245.185.85
+35.221.32.16
+35.236.218.116
+34.121.194.234
+35.223.66.230
+35.184.47.137
+35.239.16.123
+34.70.195.215
+35.232.100.126
+35.222.176.113
+34.105.13.193
+35.233.207.100
+35.199.160.253
+35.247.75.108
+35.247.24.198
+35.230.90.221
+35.230.69.145
+34.85.90.236
+34.84.113.138
+34.84.165.63
+34.84.154.117
+35.243.118.229
+34.84.103.92
+34.84.248.234
+34.93.235.38
+34.93.217.11
+34.93.247.76
+34.93.3.171
+35.244.26.219
+34.93.193.114
+34.93.238.6
+35.220.131.196
+35.220.139.150
+34.92.75.78
+34.96.232.37
+34.96.224.43
+35.220.173.188
+34.96.169.212
+```
