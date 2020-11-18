@@ -104,8 +104,8 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 - [Source code](https://github.com/graphprotocol/indexer/)
 - [NPM
-  package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent/v/0.3.6)
-  (release: `@graphprotocol/indexer-agent@0.3.6`)
+  package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent/v/0.3.7-alpha.1)
+  (release: `@graphprotocol/indexer-agent@0.3.7-alpha.1`)
 - [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent) (tag: `sha-63f5c7a`)
 - [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-agent/CHANGELOG.md#030---2020-10-13)
 
@@ -116,8 +116,8 @@ Notable changes that require changes in the indexer-agent configuration:
 ## Indexer Service
 
 - [Source code](https://github.com/graphprotocol/indexer/)
-- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service/v/0.3.6)
-  (release: `@graphprotocol/indexer-service@0.3.6`)
+- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service/v/0.3.7-alpha.1)
+  (release: `@graphprotocol/indexer-service@0.3.7-alpha.1`)
 - [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service) (tag: `sha-63f5c7a`)
 - [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-service/CHANGELOG.md#030---2020-10-13)
 
