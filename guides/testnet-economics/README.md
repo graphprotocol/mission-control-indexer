@@ -27,6 +27,7 @@ The basic things to grasp are:
 - Subgraphs with more signal will receive more inflation rewards
 - The Indexer with more stake on that subgraph will receive a larger portion of the rewards that
   the subgraph will receive
+- Inflation is paid by minting new tokens when an allocation is closed
 
 An important parameter in the testnet is the `network GRT issuance` (a.k.a inflation rate).
 In the testnet so far we have used 3%, and it should stay *around* this value.
@@ -53,11 +54,11 @@ The formula is a bit complex. Let's add some more detail on how it works within 
   that the allocation was closed in.
     - Note that during this time, if that Allocation is still receiving query fees, they will be
       added to the pool in which the Allocation was closed, not the next epoch.
-- The query fees can be claimed after the `channelDisputesEpoch` time is up.
+- The query fees can be claimed after the `channelDisputeEpochs` time is up.
 
 When you examine the formula, you will notice that you can actually **receive a smaller query fee**
-**rebate than the query fees you collected**. This is shown with an example in the screen shot
-below:
+**rebate than the query fees you collected**, as well as a larger amount than you collected.
+This is shown with an example in the screen shot below:
 
 ![Cobbs table](./images/cobbs-table.png)
 
