@@ -214,7 +214,7 @@ addresses to send requests to your indexer service.
 34.69.24.145
 ```
 
-### Fixing syncing Uniswap v2 subgraph (QmWTrJJ9W8h3JE19FhCzzPYsJ2tgXZCdUqnbyuo64ToTBN) with "413 Payload Too Large" error
+### How to fix UniswapV2 subgraph (QmWTrJJ9W8h3JE19FhCzzPYsJ2tgXZCdUqnbyuo64ToTBN) sync error "413 Payload Too Large"
 
 If the subgraph is out of sync with the node error
 ```
