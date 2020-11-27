@@ -213,3 +213,20 @@ addresses to send requests to your indexer service.
 35.238.113.17
 34.69.24.145
 ```
+
+### Fixing syncing Uniswap v2 subgraph (QmWTrJJ9W8h3JE19FhCzzPYsJ2tgXZCdUqnbyuo64ToTBN) with "413 Payload Too Large" error
+
+If the subgraph is out of sync with the node error
+```
+WARN Unexpected RPC error, error: Transport("Unexpected response status code: 413 Payload Too Large"), subgraph_id: QmWTrJJ9W8h3JE19FhCzzPYsJ2tgXZCdUqnbyuo64ToTBN, component: SubgraphInstanceManager > BlockStrea
+```
+You must increase the RPC throughput (body size) on your Ethereum node server.
+
+eg Nginx (by default client_max_body_size=1m):
+```
+sudo nano /etc/nginx/nginx.conf
+client_max_body_size 10m;
+
+#Restart nginx to apply the changes.
+sudo service nginx restart
+```
