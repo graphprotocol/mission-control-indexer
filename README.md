@@ -43,6 +43,7 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 - **2020-10-28: [Indexer 0.3.3 release](./updates/2020-10-28-indexer-release-v0.3.3.md).**
 - **2020-10-30: [Indexer 0.3.5 release](./updates/2020-10-30-indexer-release-v0.3.5.md).**
 - **2020-11-11: [Indexer 0.3.6 "preTRAFFIC 🚦" release](./updates/2020-11-11-indexer-release-v0.3.6.md).**
+- **2020-11-27: [Indexer 0.4.1 "TRAFFIC 🚦" release](./updates/2020-11-27-indexer-release-v0.4.1.md).**
 
 ## Main Changes
 
@@ -95,18 +96,18 @@ For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
 
 ## Contract Addresses
 
-- [GRT](https://rinkeby.etherscan.io/address/0x496eec523c74c4BbF071e0c75573c9deb07929f4): `0x496eec523c74c4BbF071e0c75573c9deb07929f4`
-- [GDAI](https://rinkeby.etherscan.io/address/0xFb49BDaA59d4B7aE6260D22b7D86e6Fe94031b82): `0xFb49BDaA59d4B7aE6260D22b7D86e6Fe94031b82`
+- [GRT](https://rinkeby.etherscan.io/address/0x31958e219073d60FDCeb1d608c293754331dd352): `0x31958e219073d60FDCeb1d608c293754331dd352`
+- [GDAI](https://rinkeby.etherscan.io/address/0xaCf3F4093B9851292181BEE2F80D2A450dB25D7a): `0xaCf3F4093B9851292181BEE2F80D2A450dB25D7a`
 - [Uniswap Pair](https://rinkeby.etherscan.io/address/0x9228373a1d330d502ed05c013b5989a71e1f5f8e): `0x9228373a1d330d502ed05c013b5989a71e1f5f8e`
 
 ## Indexer Agent
 
 - [Source code](https://github.com/graphprotocol/indexer/)
 - [NPM
-  package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent/v/0.3.6)
-  (release: `@graphprotocol/indexer-agent@0.3.6`)
-- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent) (tag: `sha-f305b2d`)
-- [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-agent/CHANGELOG.md#030---2020-10-13)
+  package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent/v/0.4.1)
+  (release: `@graphprotocol/indexer-agent@0.4.1`)
+- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent) (tag: `sha-76dfd03`)
+- [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-agent/CHANGELOG.md#040---2020-11-27)
 
 Notable changes that require changes in the indexer-agent configuration:
 
@@ -115,17 +116,17 @@ Notable changes that require changes in the indexer-agent configuration:
 ## Indexer Service
 
 - [Source code](https://github.com/graphprotocol/indexer/)
-- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service/v/0.3.6)
-  (release: `@graphprotocol/indexer-service@0.3.6`)
-- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service) (tag: `sha-f305b2d`)
-- [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-service/CHANGELOG.md#030---2020-10-13)
+- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service/v/0.4.0)
+  (release: `@graphprotocol/indexer-service@0.4.0`)
+- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service) (tag: `sha-76dfd03`)
+- [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-cli/CHANGELOG.md#040---2020-11-27)
 
 ## Indexer CLI
 
 - [Source code](https://github.com/graphprotocol/indexer/)
-- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-cli/v/0.3.6)
-  (release: `@graphprotocol/indexer-cli@0.3.6`)
-- [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-cli/CHANGELOG.md#030---2020-10-13)
+- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-cli/v/0.4.0)
+  (release: `@graphprotocol/indexer-cli@0.4.0`)
+- [Changes since phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-cli/CHANGELOG.md#040---2020-11-27)
 
 ## Graph Node
 
