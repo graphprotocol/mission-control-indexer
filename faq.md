@@ -135,7 +135,8 @@ convention.
 This is the list. If you have a firewall set up, make sure to allow these IP
 addresses to send requests to your indexer service.
 
-```
+```sh
+# Gateways
 35.247.235.213
 34.95.216.195
 35.247.236.236
@@ -246,4 +247,15 @@ addresses to send requests to your indexer service.
 34.92.160.5
 34.92.229.116
 34.96.233.96
+
+# Prometheus 1
+34.66.176.13
+34.70.32.134
+34.122.137.99
+
+# Prometheus 2
+104.197.97.55
+35.238.113.17
+34.69.24.145
+
 ```
