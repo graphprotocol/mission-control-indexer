@@ -11,10 +11,10 @@ images:
     newTag: v0.19.2
   - name: indexer-agent-image
     newName: graphprotocol/indexer-agent
-    newTag: sha-76dfd03
+    newTag: sha-44fe0aa
   - name: indexer-service-image
     newName: graphprotocol/indexer-service
-    newTag: sha-76dfd03
+    newTag: sha-44fe0aa
   - name: prometheus-image
     newName: prom/prometheus
     newTag: v2.17.1
