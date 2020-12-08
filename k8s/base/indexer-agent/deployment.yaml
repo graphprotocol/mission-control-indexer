@@ -65,4 +65,4 @@ spec:
                   name: postgres-credentials
                   key: password
             - name: INDEXER_AGENT_POSTGRES_DATABASE
-              value: indexer-agent
+              value: indexer-service
