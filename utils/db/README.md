@@ -15,6 +15,47 @@ are using Google CloudSQL [this file](./gcloud-connect.md) explains how you
 can use `cloud_sql_proxy` to connect from your workstation to your CloudSQL
 database.
 
+## Removing unused deployments
+
+When a subgraph deployment is not used by any subgraph any longer, its data
+still stays in the database. To remove that data, run the script
+`bin/remove-unused-deployments`.
+
+A deployment is considered unused if it is not currently assigned for
+indexing, and is neither the current nor pending version of any subgraph.
+
+To use this script, you have to set hings up so that you can log into the
+desired graph databases without supplying details on the psql command line,
+i.e., running just `psql` should connect you to the database from which you
+want to remove deployments/subgraph versions
+
+The recommended way to configure your environment to do the above if to use
+a [pg_service.conf
+file](https://www.postgresql.org/docs/9.6/libpq-pgservice.html) In a
+nutshell, put the following into `~/.pg_service.conf`, filling in the
+relevant values for your environment:
+
+    [mygraph]
+    host=<database host>
+    hostaddr=<database ip address> # can be omitted if DNS to 'host' works
+    port=<database port>
+    dbname=<database name>
+    user=<database user>
+    password=<database password>
+
+Check that you set things up properly by running
+
+    PGSERVICE=mygraph psql -c 'select count(*) from subgraphs.subgraph'
+
+That should return the number of named subgraphs in your
+installation. Once that works, you can now run
+
+    PGSERVICE=mygraph ./remove-unused-deployments
+
+All output will be sent to `/var/tmp/remove-unused-deployments.txt` - you
+will not see any output from this script in your terminal.
+
+
 ## Rewinding a database
 
 We have several reports that buggy Ethereum nodes produce invalid data

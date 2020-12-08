@@ -1,0 +1,108 @@
+#! /bin/bash
+
+# This script does something dangerous: deleting data irretrievably. Before
+# running it, you should take a backup since there is absolutely no other
+# way to get deleted data back. We have used this script internally for our
+# purposes, but that is no guarantee that it will work in your
+# infrastructure (though it just might).
+
+# This script removes unused subgraph deployments (versions) A deployment
+# is considered unused if it is not currently assigned for indexing; that
+# usually happens when a deployment is no longer the current or pending
+# version of any subgraph.
+#
+# To use this script, you have to set hings up so that you can log into the
+# desired graph databases without supplying details on the psql command
+# line, i.e., running just a plan `psql` should connect you to the database
+# from which you want to remove deployments/subgraph versions
+#
+# The recommended way to configure your environment to do the above if to
+# use a pg_service.conf file
+# (https://www.postgresql.org/docs/9.6/libpq-pgservice.html) In a nuthsell,
+# put the following into ~/.pg_service.conf, filling in the relevant values
+# for your environment:
+#
+#     [mygraph]
+#     host=<database host>
+#     hostaddr=<database ip address> # can be omitted if DNS to 'host' works
+#     port=<database port>
+#     dbname=<database name>
+#     user=<database user>
+#     password=<database password>
+#
+# Check that you set things up properly by running
+#
+#     PGSERVICE=mygraph psql -c 'select count(*) from subgraphs.subgraph'
+#
+# That should return the number of named subgraphs in your
+# installation. Once that works, you can now run
+#
+#     PGSERVICE=mygraph ./remove-unused-deployments
+#
+# All output will be sent to /var/tmp/remove-unused-deployments.txt - you
+# will not see any output from this script in your terminal.
+#
+# The script expects a file `../sql/remove-deployment.sql` to exist which it
+# will load into the database
+
+loop() {
+    local count="$1"
+    local cmd="$2"
+
+    for i in $(seq 1 "$count")
+    do
+        printf "============================== $i ==============================\n"
+        psql -Xt -c '\timing on' -c "$cmd"
+        sleep 1
+    done
+}
+
+# Various SQL commands we need
+read -r -d '' count_unassigned <<"EOF"
+select
+       (select count(*)
+          from subgraphs.subgraph_deployment)
+     - (select count(*)
+          from subgraphs.subgraph_deployment_assignment)
+EOF
+
+read -r -d '' remove_deployment <<EOF
+select remove_deployment(x.subgraph)
+  from (select d.id as subgraph,
+               d.entity_count
+          from subgraphs.subgraph_deployment d
+         where not exists (select 1
+                             from subgraphs.subgraph_deployment_assignment a
+                            where a.id = d.id)
+         order by d.entity_count asc
+         limit 1) x;
+EOF
+
+read -r -d '' count_unneeded_events <<EOF
+select ceil(count(*)/50000::float)
+  from unneeded_event_ids
+EOF
+
+read -r -d '' unneeded_events <<EOF
+with t as
+  (select event_id from unneeded_event_ids order by event_id asc limit 50000),
+   x as
+  (delete from unneeded_event_ids
+    where event_id in (select event_id from t))
+delete from event_meta_data
+ where id in (select event_id from t);
+EOF
+
+set -e
+
+TOPDIR=$(readlink -f $(dirname "$0")/..)
+echo "Loading stored procedures"
+psql -Xt -f $TOPDIR/sql/remove-deployment.sql
+
+# Send all output to a file to make sure the changes leave a record. When
+# this script is done, this file should be put somewhere for safekeeping
+exec >/var/tmp/remove-unused-deployments.txt 2>&1
+
+count=$(psql -Xt -c "$count_unassigned")
+echo "$count unassigned subgraphs"
+loop "$count" "$remove_deployment"
