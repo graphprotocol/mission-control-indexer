@@ -15,5 +15,5 @@ yarn
 Run the script with:
 
 ```bash
-./phase2-test <indexer-address>
+./phase2-test indexer <indexer-address>
 ```
