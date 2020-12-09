@@ -65,7 +65,7 @@ function ok(...msg: any[]) {
 }
 
 function neutral(...msg: any[]) {
-  console.log(' ', chalk.orange(`✔`), ...msg)
+  console.log(' ', chalk.yellow(`✔`), ...msg)
 }
 
 function failed(...msg: any[]) {
@@ -230,7 +230,7 @@ async function checkStake(ctx: Ctx, address: Address): Promise<void> {
 
     const stake = BigNumber.from(data.indexer.stakedTokens)
 
-    if (stake.gt(parseGRT('1000000'))) {
+    if (stake.gte(parseGRT('1000000'))) {
       ok(displayGRT(stake))
     } else if (stake.gt(parseGRT('0'))) {
       neutral(displayGRT(stake), '(low)')
@@ -291,9 +291,9 @@ async function checkActiveAllocations(
             : chalk.green
 
           return color(
-            `${allo.id}, ${allo.subgraphDeployment.id}, amount: ${displayGRT(
-              BigNumber.from(allo.allocatedTokens),
-            )} (${
+            `${allo.id}, ${
+              new SubgraphDeploymentID(allo.subgraphDeployment.id).ipfsHash
+            }, amount: ${displayGRT(BigNumber.from(allo.allocatedTokens))} (${
               allocationStatus == 'bad'
                 ? 'low'
                 : allocationStatus === 'neutral'
@@ -376,7 +376,7 @@ async function checkCostModels(ctx: Ctx, address: Address, allos: any[]): Promis
             }
           }
         `,
-        { deployments: deployments.map(id => id.bytes32) },
+        { deployments: deployments.map(id => id.ipfsHash) },
       )
       .toPromise()
 
@@ -388,7 +388,7 @@ async function checkCostModels(ctx: Ctx, address: Address, allos: any[]): Promis
       deployments,
       (id: SubgraphDeploymentID) =>
         data.data.costModels.findIndex(
-          (costModel: any) => costModel.deployment === id.bytes32,
+          (costModel: any) => costModel.deployment === id.ipfsHash,
         ) * -1,
     )
 
@@ -397,10 +397,14 @@ async function checkCostModels(ctx: Ctx, address: Address, allos: any[]): Promis
         (costModel: any) => costModel.deployment === deployment.bytes32,
       )
 
+      costModel.deployment = new SubgraphDeploymentID(costModel.deployment).ipfsHash
+
       if (!costModel) {
         failed(`No cost model defined for deployment`, deployment.ipfsHash)
       } else {
         ok(`Cost model defined for deployment`, deployment.ipfsHash)
+
+        list([chalk.gray(JSON.stringify(costModel))])
       }
     }
   } catch (err) {
