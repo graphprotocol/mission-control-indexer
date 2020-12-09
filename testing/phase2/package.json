@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@graphprotocol/common-ts": "0.4.0",
+    "chalk": "^4.1.0",
+    "ethers": "^5.0.24",
+    "graphql": "^15.4.0",
+    "graphql-tag": "^2.11.0",
+    "isomorphic-fetch": "^3.0.0",
+    "lodash": "^4.17.20",
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "@types/isomorphic-fetch": "^0.0.35",
+    "@types/node": "^14.14.11",
+    "@types/yargs": "^15.0.11"
+  }
+}

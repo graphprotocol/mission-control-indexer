@@ -1,0 +1,12 @@
+#!/usr/bin/env ts-node
+
+const path = require('path')
+const yargs = require('yargs')
+
+yargs
+  .scriptName('phase2-test')
+  .usage('$0 <cmd> [args]')
+  .command(require('./src/indexer').default)
+  .help()
+  .demandCommand(1)
+  .parse()
