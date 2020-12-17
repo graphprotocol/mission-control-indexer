@@ -44,7 +44,7 @@ The following releases are required for mainnet:
 
 There is a new canonical IPFS node for The Graph Network:
 
-* https://ipfs.network.thegraph.com/
+* https://ipfs.network.thegraph.com
 
 ## Using the Token Lock Contract
 
@@ -65,7 +65,7 @@ Before you can upgrade, you need to stake and add an operator using the tokken l
   (proof of indexing) and, consequently, slashing.
 
 - Configure your nodes to point to the new canonical IPFS node for The Graph
-  Network: https://ipfs.network.thegraph.com/.
+  Network: https://ipfs.network.thegraph.com. NOTE: No trailing slash!
 
 - An Ethereum node that supports
   [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) is required to avoid

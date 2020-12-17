@@ -77,7 +77,7 @@ spec:
                 fieldRef:
                   fieldPath: metadata.name
             - name: ipfs
-              value: https://testnet.thegraph.com/ipfs/
+              value: https://ipfs.network.thegraph.com
             - name: ethereum
               valueFrom:
                 configMapKeyRef:
