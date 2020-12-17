@@ -20,127 +20,140 @@ assist you in getting set up.
 
 - [Phase 0](phases/phase0.md)
 - [Phase 1](phases/phase1.md)
+- [Phase 2/3](phases/phase2.md)
 
-# Phase 2
+# Graph Network
 
-There is only one mission in phase 2: honest profit maximization. To compete
-in phase 2, the indexer infrastructure needs to be updated to new releases.
+We have all been eagerly waiting for this moment. It is here now: The Graph
+Network has launched!
 
-Note: No new components were added aside from internal dependencies.
+In order to upgrade from the testnet to mainnet, please follow the guide
+below. Let us know on [Discord](https://thegraph.com/discord) in the
+`#indexers` channel if you have any problems or questions.
 
-For NPM registry access, see the [NPM registry guide](guides/npm-registry.md).
+**Note: We will be open sourcing the indexer repository and its dependencies in the coming days. At that point there will be a new release. From then on, we will implement a more rigorous release process.**
 
-## Important Updates
+## tl;dr
 
-- **2020-10-15: [Indexer 0.3.1 release to restart phase 2](./updates/2020-10-15-indexer-release-to-restart-phase2.md) — updates
-  indexer components to new contracts so that we can cleanly restart phase 2, as announced earlier this week.**
-- **2020-10-16: [GDAI to GRT conversation utility for cost models](./utils/gdai-to-grt/).**
-- **2020-10-20: [Graph Node v0.19.0 release allows to disable EIP-1898](./updates/2020-10-20-graph-node-v0.19.2.md).**
-- **2020-10-21: [Subgraph Deployment ID conversion utility](./utils/subgraph-deployment-id-conversions).**
-- **2020-10-27: [Updated Agora tool to use decimal GRT rather then wei](https://github.com/graphprotocol/agora).**
-- **2020-10-27: [Updated GDAI to GRT conversion utility to output conversion rate in decimal format](./utils/gdai-to-grt).**
-- **2020-10-27: [Indexer 0.3.2 release](./updates/2020-10-27-indexer-release-phase2-improvements.md).**
-- **2020-10-28: [Indexer 0.3.3 release](./updates/2020-10-28-indexer-release-v0.3.3.md).**
-- **2020-10-30: [Indexer 0.3.5 release](./updates/2020-10-30-indexer-release-v0.3.5.md).**
-- **2020-11-11: [Indexer 0.3.6 "preTRAFFIC 🚦" release](./updates/2020-11-11-indexer-release-v0.3.6.md).**
-- **2020-11-27: [Indexer 0.4.1 "TRAFFIC 🚦" release](./updates/2020-11-27-indexer-release-v0.4.1.md).**
-- **2020-11-27: [Indexer 0.4.2 "TRAFFIC NOW! 🚦" release](./updates/2020-11-30-indexer-release-v0.4.2.md).**
+The following releases are required for mainnet:
 
-## Main Changes
+- graph-node 0.20.0
+- indexer-service 0.9.0-alpha.0
+- indexer-agent 0.9.0-alpha.0
+- indexer-cli 0.9.0-alpha.0
 
-- Graph Node now makes contracts calls by block hash instead of block number.
-  This may affect Ethereum providers that are missing this feature. For
-  reference, this feature was added to Ethereum via
-  [EIP-1989](https://eips.ethereum.org/EIPS/eip-1898).
+There is a new canonical IPFS node for The Graph Network:
 
-- The Indexer Agent no longer automatically stakes on your behalf. This is
-  because we've split up the indexer into two roles: indexer and operator.
+* https://ipfs.network.thegraph.com/
 
-  This feature allows indexers to decouple their root keys from lower-risk
-  operator keys that have limited capabilities. Only the indexer root key can
-  stake (via the UI). Multiple operators can be defined, but only one can
-  register a URL for the indexer at a time. Indexer and operator _can_ use
-  the same Ethereum address and key.
+## Using the Token Lock Contract
 
-  In order to set things up correctly, indexers need to:
-
-  1. stake using the UI (Indexer Agent will automatically allocate using this stake),
-  2. (if you want to use different indexer and operator keys) set one or more operators.
-
-- Indexer components now run as "operators" of indexers. This means that, in
-  addition to `--mnemonic` or `INDEXER_AGENT_MNEMONIC` /
-  `INDEXER_SERVICE_MNEMONIC`, an `--indexer-address` or
-  `INDEXER_AGENT_INDEXER_ADDRESS` / `INDEXER_SERVICE_INDEXER_ADDRESS` value
-  needs to be passed to Indexer Agent and Service, with the Ethereum address of
-  the indexer.
-
-- Cost management and a `/cost` API have been added to the Indexer Service for
-  price definition and discovery. It's a market now!
-
-- The Indexer Service can now be scaled horizontally, and can also
-  use worker threads for its state channel wallet.
-
-  A single wallet thread can only process a limited amount of payments per
-  second, so it's worth doing this by setting the `AMOUNT_OF_WORKER_THREADS`
-  environment variable for the Indexer Service.
-
-  Assuming your Indexer Service runs on its own machine or in its own VM,
-  we recommend using one thread per real CPU thread or vCPU. Also, leave
-  one CPU thread or vCPU for the main thread of the indexer, and more
-  threads/vCPUs for other processes if there are any.
-
-  If you scale the Indexer Service horizontally, make sure that the
-  sum of main threads and worker threads does not exceed the CPU threads
-  or vCPUs.
-
-* There is a new network subgraph version. Make sure to update the `--network-subgraph-endpoint` or `INDEXER_AGENT_NETWORK_SUBGRAPH_ENDPOINT` / `INDEXER_SERVICE_NETWORK_SUBGRAPH_ENDPOINT` values to `https://api.thegraph.com/subgraphs/name/graphprotocol/graph-network-testnet-phase2`.
-
-## Contract Addresses
-
-- [GRT](https://rinkeby.etherscan.io/address/0x31958e219073d60FDCeb1d608c293754331dd352): `0x31958e219073d60FDCeb1d608c293754331dd352`
-- [GDAI](https://rinkeby.etherscan.io/address/0xaCf3F4093B9851292181BEE2F80D2A450dB25D7a): `0xaCf3F4093B9851292181BEE2F80D2A450dB25D7a`
-- [Uniswap Pair](https://rinkeby.etherscan.io/address/0x9228373a1d330d502ed05c013b5989a71e1f5f8e): `0x9228373a1d330d502ed05c013b5989a71e1f5f8e`
-
-## Indexer Agent
-
-- [Source code](https://github.com/graphprotocol/indexer/)
-- [NPM
-  package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent/v/0.4.3)
-  (release: `@graphprotocol/indexer-agent@0.4.3`)
-- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-agent) (tag: `sha-44fe0aa`)
-- [Changes since the last phase 1 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-agent/CHANGELOG.md#043---2020-12-07)
-
-Notable changes that require changes in the indexer-agent configuration:
-
-- The `INDEXER_AGENT_INDEXER_GEO_COORDINATES` environment variable is now space-separated (`"<lat> <long>`).
-
-## Indexer Service
-
-- [Source code](https://github.com/graphprotocol/indexer/)
-- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service/v/0.4.3)
-  (release: `@graphprotocol/indexer-service@0.4.3`)
-- [Docker image](https://hub.docker.com/repository/docker/graphprotocol/indexer-service) (tag: `sha-44fe0aa`)
-- [Changes since the last phase 2 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-cli/CHANGELOG.md#043---2020-12-07)
-
-## Indexer CLI
-
-- [Source code](https://github.com/graphprotocol/indexer/)
-- [NPM package](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-cli/v/0.4.3)
-  (release: `@graphprotocol/indexer-cli@0.4.3`)
-- [Changes since phase 2 release](https://github.com/graphprotocol/indexer/blob/master/packages/indexer-cli/CHANGELOG.md#040---2020-11-27)
+Before you can upgrade, you need to stake and add an operator using the tokken lock contract. This is described [in this guide](https://www.notion.so/Graph-Network-Token-Lock-Contract-Guide-30992eea5f4b47c8b4c6ff7a9bc56a41).
 
 ## Graph Node
 
-- [Source code](https://github.com/graphprotocol/graph-node/)
-- [Release
-  tag](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.2) (`v0.19.2`)
-- [Docker image](https://hub.docker.com/layers/graphprotocol/graph-node/) (tag: `v0.19.2`)
-- [Changes between 0.18.0 and 0.19.0](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.0)
-- [Changes between 0.19.0 and 0.19.1](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.1)
-- [Changes between 0.19.1 and 0.19.2](https://github.com/graphprotocol/graph-node/releases/tag/v0.19.2)
+### Release Details
 
-## Agora
+- Docker image: [`graphprotocol/graph-node:v0.20.0`](https://hub.docker.com/layers/graphprotocol/graph-node/v0.20.0/images/sha256-7684c4076e5ea91578bd2ff8bad659071e0f6923065632ae4a1166bff4ff8ee5?context=explore)
+- Git tag: [v0.20.0](https://github.com/graphprotocol/graph-node/releases/tag/v0.20.0)
+- Release notes: [v0.20.0](https://github.com/graphprotocol/graph-node/blob/master/NEWS.md#020)
 
-- [Source code](https://github.com/graphprotocol/agora)
-- [Guide](./guides/agora/language)
-- [Workshop](https://www.youtube.com/watch?v=F88iqiCxj-s)
+### Release Notes
+
+- This release disables support for IPFS and fulltext search, two
+  non-deterministic features that could lead to inconsistent indexing results
+  (proof of indexing) and, consequently, slashing.
+
+- Configure your nodes to point to the new canonical IPFS node for The Graph
+  Network: https://ipfs.network.thegraph.com/.
+
+- An Ethereum node that supports
+  [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) is required to avoid
+  unpredictable subgraph failures, inconsistent indexing results (proof of
+  indexing) and, consequently, slashing.
+
+## Indexer Service
+
+### Release Details
+
+- Docker image: [`graphprotocol/indexer-service:sha-18175dc`](https://hub.docker.com/layers/graphprotocol/indexer-service/sha-18175dc/images/sha256-74661782cb829e8d0dd5bb9cd1d8a383d11eefa85bd0d28c7657968b91ea0b34?context=explore)
+- NPM package: [`@graphprotocol/indexer-service@0.9.0-alpha.0`](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service/v/0.9.0-alpha.0)
+- Git tag: [v0.9.0-alpha.0](https://github.com/graphprotocol/indexer/releases/tag/v0.9.0-alpha.0)
+
+### Release Notes
+
+- This is primarily an upgrade to add support for the mainnet contracts.
+
+- Start from a fresh database, don't mix testnet and mainnet infrastructure.
+
+- In order to run against mainnet, either
+  - Pass `--ethereum-network mainnet` to `graph-indexer-service`, or
+  - Set the `INDEXER_SERVICE_ETHEREUM_NETWORK=mainnet` in the environment.
+
+- Also, set `--network-subgraph-endpoint` or
+  `INDEXER_SERVICE_NETWORK_SUBGRAPH_ENDPOINT` to
+  `https://gateway.network.thegraph.com/network`.
+
+- As before, make sure to secure your indexer by using different indexer and
+  operator keys in the protocol:
+
+  - The _indexer_ is the account that _stakes_ and sets the operator.
+  - The _operator_ is the account that runs the indexer infrastructure.
+
+  When setting up your indexer, make sure to:
+
+  - Pass the _indexer_ address in via `--indexer-address` or `INDEXER_SERVICE_INDEXER_ADDRESS`.
+  - Pass the _operator_ mnemonic in via `--mnemonic` or `INDEXER_SERVICE_MNEMONIC`.
+
+## Indexer Agent
+
+### Release Details
+
+- Docker image: [`graphprotocol/indexer-agent:sha-18175dc`](https://hub.docker.com/layers/130593309/graphprotocol/indexer-agent/sha-18175dc/images/sha256-3aa5f96454ebfc879fe4188a3ee05fef3813475cae2e455ff37c4b98fa770de6?context=explore)
+- NPM package: [`@graphprotocol/indexer-agent@0.9.0-alpha.0`](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent/v/0.9.0-alpha.0)
+- Git tag: [v0.9.0-alpha.0](https://github.com/graphprotocol/indexer/releases/tag/v0.9.0-alpha.0)
+
+### Release Notes
+
+- This is primarily an upgrade to add support for the mainnet contracts.
+
+- Start from a fresh database, don't mix testnet and mainnet infrastructure.
+
+- In order to run against mainnet, either
+  - Pass `--ethereum-network mainnet` to `graph-indexer-agent`, or
+  - Set the `INDEXER_AGENT_ETHEREUM_NETWORK=mainnet` in the environment.
+
+- Also, set `--network-subgraph-endpoint` or
+  `INDEXER_AGENT_NETWORK_SUBGRAPH_ENDPOINT` to
+  `https://gateway.network.thegraph.com/network`.
+
+- As before, make sure to secure your indexer by using different indexer and
+  operator keys in the protocol:
+
+  - The _indexer_ is the account that _stakes_ and sets the operator.
+  - The _operator_ is the account that runs the indexer infrastructure.
+
+  When setting up your indexer, make sure to:
+
+  - Pass the _indexer_ address in via `--indexer-address` or `INDEXER_AGENT_INDEXER_ADDRESS`.
+  - Pass the _operator_ mnemonic in via `--mnemonic` or `INDEXER_AGENT_MNEMONIC`.
+
+- The agent does not support a configurable ETH "rate" limit yet, so
+  make sure not to fund your _operator_ account with _too_ much ETH.
+
+## Indexer CLI
+
+### Release Details
+
+- NPM package: [`@graphprotocol/indexer-cli@0.9.0-alpha.0`](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-cli/v/0.9.0-alpha.0)
+- Git tag: [v0.9.0-alpha.0](https://github.com/graphprotocol/indexer/releases/tag/v0.9.0-alpha.0)
+
+### Release Notes
+
+- There are no changes in the indexer CLI, other than dependency updates.
+
+## What to expect next?
+
+- Open sourcing of the indexer repository and dependencies in the coming days.
+- A gradual increase in mainnet subgraphs.
+- A new, freshly set up testnet early next year.
