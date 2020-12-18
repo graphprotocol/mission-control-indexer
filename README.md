@@ -38,9 +38,9 @@ below. Let us know on [Discord](https://thegraph.com/discord) in the
 The following releases are required for mainnet:
 
 - graph-node 0.20.0
-- indexer-service 0.9.0-alpha.0
-- indexer-agent 0.9.0-alpha.0
-- indexer-cli 0.9.0-alpha.0
+- indexer-service 0.9.0-alpha.2
+- indexer-agent 0.9.0-alpha.2
+- indexer-cli 0.9.0-alpha.2
 
 There is a new canonical IPFS node for The Graph Network:
 
@@ -76,9 +76,9 @@ Before you can upgrade, you need to stake and add an operator using the tokken l
 
 ### Release Details
 
-- Docker image: [`graphprotocol/indexer-service:sha-18175dc`](https://hub.docker.com/layers/graphprotocol/indexer-service/sha-18175dc/images/sha256-74661782cb829e8d0dd5bb9cd1d8a383d11eefa85bd0d28c7657968b91ea0b34?context=explore)
-- NPM package: [`@graphprotocol/indexer-service@0.9.0-alpha.0`](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service/v/0.9.0-alpha.0)
-- Git tag: [v0.9.0-alpha.0](https://github.com/graphprotocol/indexer/releases/tag/v0.9.0-alpha.0)
+- Docker image: `graphprotocol/indexer-service:sha-4d50de5`
+- NPM package: [`@graphprotocol/indexer-service@0.9.0-alpha.2`](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-service/v/0.9.0-alpha.2)
+- Git tag: [v0.9.0-alpha.2](https://github.com/graphprotocol/indexer/releases/tag/v0.9.0-alpha.2)
 
 ### Release Notes
 
@@ -110,9 +110,9 @@ Before you can upgrade, you need to stake and add an operator using the tokken l
 
 ### Release Details
 
-- Docker image: [`graphprotocol/indexer-agent:sha-18175dc`](https://hub.docker.com/layers/130593309/graphprotocol/indexer-agent/sha-18175dc/images/sha256-3aa5f96454ebfc879fe4188a3ee05fef3813475cae2e455ff37c4b98fa770de6?context=explore)
-- NPM package: [`@graphprotocol/indexer-agent@0.9.0-alpha.0`](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent/v/0.9.0-alpha.0)
-- Git tag: [v0.9.0-alpha.0](https://github.com/graphprotocol/indexer/releases/tag/v0.9.0-alpha.0)
+- Docker image: `graphprotocol/indexer-agent:sha-4d50de5`
+- NPM package: [`@graphprotocol/indexer-agent@0.9.0-alpha.2`](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-agent/v/0.9.0-alpha.2)
+- Git tag: [v0.9.0-alpha.2](https://github.com/graphprotocol/indexer/releases/tag/v0.9.0-alpha.2)
 
 ### Release Notes
 
@@ -147,8 +147,8 @@ Before you can upgrade, you need to stake and add an operator using the tokken l
 
 ### Release Details
 
-- NPM package: [`@graphprotocol/indexer-cli@0.9.0-alpha.0`](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-cli/v/0.9.0-alpha.0)
-- Git tag: [v0.9.0-alpha.0](https://github.com/graphprotocol/indexer/releases/tag/v0.9.0-alpha.0)
+- NPM package: [`@graphprotocol/indexer-cli@0.9.0-alpha.2`](https://testnet.thegraph.com/npm-registry/-/web/detail/@graphprotocol/indexer-cli/v/0.9.0-alpha.2)
+- Git tag: [v0.9.0-alpha.2](https://github.com/graphprotocol/indexer/releases/tag/v0.9.0-alpha.2)
 
 ### Release Notes
 
