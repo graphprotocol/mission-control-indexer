@@ -102,7 +102,8 @@ Before you can upgrade, you need to stake and add an operator using the tokken l
 
   When setting up your indexer, make sure to:
 
-  - Pass the _indexer_ address in via `--indexer-address` or `INDEXER_SERVICE_INDEXER_ADDRESS`.
+  - Pass the **token lock contract address** (note: _not_ the indexer address) in
+    via `--indexer-address` or `INDEXER_SERVICE_INDEXER_ADDRESS`.
   - Pass the _operator_ mnemonic in via `--mnemonic` or `INDEXER_SERVICE_MNEMONIC`.
 
 ## Indexer Agent
@@ -135,7 +136,8 @@ Before you can upgrade, you need to stake and add an operator using the tokken l
 
   When setting up your indexer, make sure to:
 
-  - Pass the _indexer_ address in via `--indexer-address` or `INDEXER_AGENT_INDEXER_ADDRESS`.
+  - Pass the **token lock contract address** (note: _not_ the indexer
+    address) in via `--indexer-address` or `INDEXER_AGENT_INDEXER_ADDRESS`.
   - Pass the _operator_ mnemonic in via `--mnemonic` or `INDEXER_AGENT_MNEMONIC`.
 
 - The agent does not support a configurable ETH "rate" limit yet, so
