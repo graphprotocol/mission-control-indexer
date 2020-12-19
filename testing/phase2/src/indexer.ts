@@ -39,7 +39,7 @@ export default {
 
     const ctx = {
       networkSubgraph: createClient({
-        url: 'https://gateway-testnet.thegraph.com/network',
+        url: 'https://gateway.network.thegraph.com/network',
         fetch,
       }),
     }
