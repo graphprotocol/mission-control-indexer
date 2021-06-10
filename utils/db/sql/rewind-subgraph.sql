@@ -96,7 +96,8 @@ begin
   update subgraphs.subgraph_deployment
      set latest_ethereum_block_number = block,
          latest_ethereum_block_hash = decode(block_hash, 'hex')
-   where id = sid;
+   where id = sid
+     and latest_ethereum_block_number > block;
 end;
 $$ language plpgsql;
 
@@ -107,7 +108,8 @@ $$
 begin
   perform rewind_subgraph(id, block_nr, block_hash)
      from subgraphs.subgraph_deployment_detail
-    where network = net limit 15;
+    where network = net
+      and latest_ethereum_block_number > block;
 
   raise notice 'Updating head block pointer';
   update ethereum_networks
